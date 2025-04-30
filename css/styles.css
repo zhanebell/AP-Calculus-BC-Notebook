@@ -11,6 +11,7 @@
     --code-bg: #1a1a1a;
     --border-color: #333333;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --secondary-color: #616161;
 }
 
 * {
@@ -354,6 +355,79 @@ search-results-list li:last-child {
 /* MathJax specific styles */
 .MathJax {
     color: var(--text-color) !important;
+}
+
+/* Objectives checklist styling */
+.objectives-section {
+    background-color: rgba(179, 136, 255, 0.1);
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.objectives-section h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.objectives-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.objectives-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.objectives-list li::before {
+    content: "□";
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+}
+
+/* FRQ buttons styling */
+.frq-buttons {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    background-color: rgba(97, 97, 97, 0.2);
+    border-radius: 8px;
+}
+
+.frq-buttons h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.frq-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: #121212;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.frq-button:hover {
+    background-color: #cfb8fd;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.frq-button:active {
+    transform: translateY(-1px);
 }
 
 /* Responsive design */
