@@ -72,6 +72,35 @@ header input {
     width: 250px;
 }
 
+/* Search button styling */
+#search-button {
+    background-color: var(--accent-color);
+    color: #121212;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+#search-button:hover {
+    background-color: #cfb8fd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#search-button:active {
+    transform: translateY(0);
+}
+
+/* Search container styling */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
 nav {
     display: flex;
     gap: 1rem;
