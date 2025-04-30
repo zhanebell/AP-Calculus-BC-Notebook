@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Calculus BC - Limits, Continuity & Basic Differentiation | April 30, 2025</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/app.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>AP Calculus BC Notebook</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="note-content">
+        <h2>Limits, Continuity & Basic Differentiation</h2>
+        <div class="date">April 30, 2025</div>
+
+        <section id="introduction">
+            <h3>Introduction to Limits</h3>
+            <p>The concept of a limit is fundamental to calculus. It describes the behavior of a function as its input approaches a particular value.</p>
+        </section>
+
+        <section id="limits-definition">
+            <h3>Understanding Limits</h3>
+            <div class="formula-box">
+                <h4>Intuitive Definition</h4>
+                <p>A limit describes the value that a function approaches as the input approaches some value:</p>
+                <p class="formula">
+                    \[ \lim_{x \to a} f(x) = L \]
+                </p>
+                <p>This is read as "the limit of \(f(x)\) as \(x\) approaches \(a\) equals \(L\)".</p>
+            </div>
+        </section>
+
+        <section id="one-sided-limits">
+            <h3>One-Sided Limits</h3>
+            <div class="formula-box">
+                <h4>Left-hand limit</h4>
+                <p>\(\lim_{x \to a^-} f(x)\) - approaching from values less than \(a\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Right-hand limit</h4>
+                <p>\(\lim_{x \to a^+} f(x)\) - approaching from values greater than \(a\)</p>
+            </div>
+            
+            <div class="theorem-box">
+                <h4>Two-Sided Limit Existence Theorem</h4>
+                <p>A two-sided limit exists only when both one-sided limits exist and are equal:</p>
+                <p class="formula">
+                    \[ \lim_{x \to a} f(x) = L \text{ if and only if } \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L \]
+                </p>
+            </div>
+        </section>
+
+        <section id="limit-laws">
+            <h3>Limit Laws</h3>
+            <div class="theorem-box">
+                <h4>Basic Limit Laws</h4>
+                <p>For functions \(f\) and \(g\) where \(\lim_{x \to a} f(x) = L\) and \(\lim_{x \to a} g(x) = M\):</p>
+                <ol>
+                    <li><strong>Sum Rule:</strong> \(\lim_{x \to a} [f(x) \pm g(x)] = L \pm M\)</li>
+                    <li><strong>Product Rule:</strong> \(\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M\)</li>
+                    <li><strong>Quotient Rule:</strong> \(\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}\), if \(M \neq 0\)</li>
+                    <li><strong>Constant Multiple Rule:</strong> \(\lim_{x \to a} [c \cdot f(x)] = c \cdot L\), for any constant \(c\)</li>
+                    <li><strong>Power Rule:</strong> \(\lim_{x \to a} [f(x)]^n = L^n\), for integer \(n\) (if \(n < 0\), then \(L \neq 0\))</li>
+                    <li><strong>Root Rule:</strong> \(\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{L}\), for odd \(n\) or for even \(n\) if \(L > 0\)</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="special-limits">
+            <h3>Special Limit Formulas</h3>
+            <div class="formula-box">
+                <h4>Trigonometric Limits</h4>
+                <p>\(\lim_{x \to 0} \frac{\sin x}{x} = 1\)</p>
+                <p>\(\lim_{x \to 0} \frac{1-\cos x}{x} = 0\)</p>
+                <p>\(\lim_{x \to 0} \frac{\tan x}{x} = 1\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Exponential Limits</h4>
+                <p>\(\lim_{x \to 0} \frac{e^x - 1}{x} = 1\)</p>
+                <p>\(\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e\)</p>
+                <p>\(\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1\)</p>
+            </div>
+        </section>
+
+        <section id="indeterminate-forms">
+            <h3>Indeterminate Forms</h3>
+            <div class="theory-box">
+                <h4>Common Indeterminate Forms</h4>
+                <p>\(\frac{0}{0}, \frac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty, 0^0, 1^{\infty}, \infty^0\)</p>
+                <p>These forms require techniques like L'Hôpital's rule, algebraic manipulation, or other limit strategies to evaluate.</p>
+            </div>
+        </section>
+
+        <section id="infinite-limits">
+            <h3>Infinite Limits and Limits at Infinity</h3>
+            
+            <div class="formula-box">
+                <h4>Infinite Limits</h4>
+                <p>When the function values grow without bound as \(x\) approaches \(a\):</p>
+                <p class="formula">\(\lim_{x \to a} f(x) = \infty\) or \(\lim_{x \to a} f(x) = -\infty\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Limits at Infinity</h4>
+                <p>Describes the behavior of a function as \(x\) grows without bound:</p>
+                <p class="formula">\(\lim_{x \to \infty} f(x) = L\) or \(\lim_{x \to -\infty} f(x) = L\)</p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Limits of Rational Functions</h4>
+                <p>For a rational function \(f(x) = \frac{P(x)}{Q(x)}\), where \(P(x) = a_n x^n + \ldots + a_1 x + a_0\) and \(Q(x) = b_m x^m + \ldots + b_1 x + b_0\):</p>
+                <ul>
+                    <li>If \(n < m\), then \(\lim_{x \to \infty} f(x) = 0\)</li>
+                    <li>If \(n = m\), then \(\lim_{x \to \infty} f(x) = \frac{a_n}{b_m}\)</li>
+                    <li>If \(n > m\), then \(\lim_{x \to \infty} f(x) = \infty\) or \(-\infty\) (depending on signs of \(a_n\) and \(b_m\))</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="continuity">
+            <h3>Continuity</h3>
+            <div class="theorem-box">
+                <h4>Definition of Continuity</h4>
+                <p>A function \(f\) is continuous at a point \(x = a\) if:</p>
+                <ol>
+                    <li>\(f(a)\) is defined</li>
+                    <li>\(\lim_{x \to a} f(x)\) exists</li>
+                    <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
+                </ol>
+            </div>
+            
+            <div class="theorem-box">
+                <h4>Types of Discontinuities</h4>
+                <ul>
+                    <li><strong>Removable discontinuity:</strong> The limit exists but \(f(a)\) is either undefined or not equal to the limit</li>
+                    <li><strong>Jump discontinuity:</strong> Left and right limits exist but are not equal</li>
+                    <li><strong>Infinite discontinuity:</strong> The limit approaches infinity from at least one side</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="key-theorems">
+            <h3>Key Theorems on Continuity</h3>
+            <div class="theorem-box">
+                <h4>Intermediate Value Theorem</h4>
+                <p>If \(f\) is continuous on [a,b] and \(k\) is any value between \(f(a)\) and \(f(b)\), then there exists at least one \(c\) in [a,b] such that \(f(c) = k\).</p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Extreme Value Theorem</h4>
+                <p>If \(f\) is continuous on a closed interval [a,b], then \(f\) attains both a maximum and minimum value on [a,b].</p>
+            </div>
+        </section>
+
+        <section id="squeeze-theorem">
+            <h3>Squeeze Theorem</h3>
+            <div class="theorem-box">
+                <h4>Squeeze Theorem (Sandwich Theorem)</h4>
+                <p>If \(g(x) \leq f(x) \leq h(x)\) for all \(x\) near \(a\) (except possibly at \(a\)), and if \(\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L\), then \(\lim_{x \to a} f(x) = L\).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AP Calculus BC Notebook</p>
+        <p><a href="../index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>
