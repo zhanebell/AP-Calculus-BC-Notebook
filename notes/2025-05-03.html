@@ -37,8 +37,342 @@
             <p>Today we'll explore the analytical applications of derivatives, including finding extrema, intervals of increase/decrease, concavity, and related rates.</p>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="mvt">
+            <h3>Mean Value Theorem (MVT)</h3>
+            <div class="theorem-box">
+                <h4>Mean Value Theorem</h4>
+                <p>If \(f\) is continuous on [a,b] and differentiable on (a,b), then there exists at least one point \(c\) in (a,b) such that:</p>
+                <p class="formula">
+                    \[ f'(c) = \frac{f(b) - f(a)}{b - a} \]
+                </p>
+                <p>Geometric interpretation: At some point in the interval, the tangent line to the curve is parallel to the secant line connecting the endpoints.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>For \(f(x) = x^3 - 3x + 2\) on \([-1, 2]\), verify the Mean Value Theorem.</p>
+                <div class="solution">
+                    <p>\(f'(x) = 3x^2 - 3\)</p>
+                    <p>\(\frac{f(2) - f(-1)}{2 - (-1)} = \frac{8 - 3 - (-1 + 3 + 2)}{3} = \frac{6 - 4}{3} = \frac{2}{3}\)</p>
+                    <p>Set \(f'(c) = \frac{2}{3}\): \(3c^2 - 3 = \frac{2}{3}\)</p>
+                    <p>\(3c^2 = \frac{2}{3} + 3 = \frac{2}{3} + \frac{9}{3} = \frac{11}{3}\)</p>
+                    <p>\(c^2 = \frac{11}{9}\) so \(c = \pm\frac{\sqrt{11}}{3}\)</p>
+                    <p>Since \(c\) must be in \((-1, 2)\) and \(\frac{\sqrt{11}}{3} \approx 1.1\), we have \(c = \frac{\sqrt{11}}{3}\).</p>
+                </div>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Rolle's Theorem (Special Case of MVT)</h4>
+                <p>If \(f\) is continuous on [a,b], differentiable on (a,b), and \(f(a) = f(b)\), then there exists at least one point \(c\) in (a,b) such that \(f'(c) = 0\).</p>
+            </div>
+        </section>
+
+        <section id="extrema">
+            <h3>Extreme Value Theorem and Critical Points</h3>
+            
+            <div class="theorem-box">
+                <h4>Extreme Value Theorem</h4>
+                <p>If \(f\) is continuous on a closed interval [a,b], then \(f\) attains both a maximum and minimum value on [a,b].</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Critical Points</h4>
+                <p>A critical point of \(f\) is a value \(x = c\) in the domain of \(f\) where either:</p>
+                <ol>
+                    <li>\(f'(c) = 0\), or</li>
+                    <li>\(f'(c)\) does not exist but \(f\) is continuous at \(c\).</li>
+                </ol>
+                <p>Critical points are candidates for local extrema.</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Types of Extrema</h4>
+                <p><strong>Local (Relative) Extrema:</strong> Values where the function is a maximum or minimum relative to nearby points.</p>
+                <p><strong>Global (Absolute) Extrema:</strong> The highest and lowest values of the function over its entire domain.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Find all critical points of \(f(x) = x^3 - 6x^2 + 9x + 1\).</p>
+                <div class="solution">
+                    <p>\(f'(x) = 3x^2 - 12x + 9\)</p>
+                    <p>Set \(f'(x) = 0\): \(3x^2 - 12x + 9 = 0\)</p>
+                    <p>\(x^2 - 4x + 3 = 0\)</p>
+                    <p>\((x - 1)(x - 3) = 0\)</p>
+                    <p>So \(x = 1\) and \(x = 3\) are critical points.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="increasing-decreasing">
+            <h3>Determining Intervals of Increase and Decrease</h3>
+            
+            <div class="theory-box">
+                <h4>First Derivative Test for Intervals</h4>
+                <p>For a differentiable function \(f\):</p>
+                <ul>
+                    <li>If \(f'(x) > 0\) on an interval, then \(f\) is increasing on that interval.</li>
+                    <li>If \(f'(x) < 0\) on an interval, then \(f\) is decreasing on that interval.</li>
+                    <li>If \(f'(x) = 0\) on an interval, then \(f\) is constant on that interval.</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>For \(f(x) = x^3 - 6x^2 + 9x + 1\), determine the intervals where \(f\) is increasing or decreasing.</p>
+                <div class="solution">
+                    <p>We found \(f'(x) = 3x^2 - 12x + 9\) with critical points at \(x = 1\) and \(x = 3\).</p>
+                    <p>Testing regions:</p>
+                    <ul>
+                        <li>For \(x < 1\): Test \(x = 0\) → \(f'(0) = 9 > 0\), so \(f\) is increasing on \((-\infty, 1)\).</li>
+                        <li>For \(1 < x < 3\): Test \(x = 2\) → \(f'(2) = 3(4) - 12(2) + 9 = 12 - 24 + 9 = -3 < 0\), so \(f\) is decreasing on \((1, 3)\).</li>
+                        <li>For \(x > 3\): Test \(x = 4\) → \(f'(4) = 3(16) - 12(4) + 9 = 48 - 48 + 9 = 9 > 0\), so \(f\) is increasing on \((3, \infty)\).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="first-derivative-test">
+            <h3>First Derivative Test for Local Extrema</h3>
+            
+            <div class="theorem-box">
+                <h4>First Derivative Test</h4>
+                <p>If \(c\) is a critical point of a continuous function \(f\) and \(f\) is differentiable near \(c\) (except possibly at \(c\)):</p>
+                <ol>
+                    <li>If \(f'(x)\) changes from positive to negative at \(x = c\), then \(f\) has a local maximum at \(x = c\).</li>
+                    <li>If \(f'(x)\) changes from negative to positive at \(x = c\), then \(f\) has a local minimum at \(x = c\).</li>
+                    <li>If \(f'(x)\) does not change sign at \(x = c\), then \(f\) has no local extremum at \(x = c\).</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>Example (Continued)</h4>
+                <p>Classify the critical points of \(f(x) = x^3 - 6x^2 + 9x + 1\) as local maxima, local minima, or neither.</p>
+                <div class="solution">
+                    <p>At \(x = 1\): \(f'(x)\) changes from positive to negative, so \(f\) has a local maximum at \(x = 1\).</p>
+                    <p>At \(x = 3\): \(f'(x)\) changes from negative to positive, so \(f\) has a local minimum at \(x = 3\).</p>
+                    <p>Local maximum value: \(f(1) = 1 - 6 + 9 + 1 = 5\)</p>
+                    <p>Local minimum value: \(f(3) = 27 - 54 + 27 + 1 = 1\)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="global-extrema">
+            <h3>Finding Global Extrema</h3>
+            
+            <div class="theorem-box">
+                <h4>Candidates Test</h4>
+                <p>To find global extrema of a continuous function \(f\) on a closed interval [a,b]:</p>
+                <ol>
+                    <li>Find all critical points of \(f\) in (a,b).</li>
+                    <li>Evaluate \(f\) at each critical point in (a,b).</li>
+                    <li>Evaluate \(f\) at the endpoints \(x = a\) and \(x = b\).</li>
+                    <li>The largest of these values is the global maximum, and the smallest is the global minimum.</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Find the global extrema of \(f(x) = x^3 - 6x^2 + 9x + 1\) on the interval \([0, 4]\).</p>
+                <div class="solution">
+                    <p>Critical points in \([0, 4]\): \(x = 1\) and \(x = 3\)</p>
+                    <p>Evaluate at critical points and endpoints:</p>
+                    <ul>
+                        <li>\(f(0) = 0 - 0 + 0 + 1 = 1\)</li>
+                        <li>\(f(1) = 1 - 6 + 9 + 1 = 5\)</li>
+                        <li>\(f(3) = 27 - 54 + 27 + 1 = 1\)</li>
+                        <li>\(f(4) = 64 - 96 + 36 + 1 = 5\)</li>
+                    </ul>
+                    <p>Global maximum: \(f(1) = f(4) = 5\) (occurs at both \(x = 1\) and \(x = 4\))</p>
+                    <p>Global minimum: \(f(0) = f(3) = 1\) (occurs at both \(x = 0\) and \(x = 3\))</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="concavity">
+            <h3>Determining Concavity</h3>
+            
+            <div class="theory-box">
+                <h4>Second Derivative Test for Concavity</h4>
+                <p>For a twice-differentiable function \(f\):</p>
+                <ul>
+                    <li>If \(f''(x) > 0\) on an interval, then \(f\) is concave upward on that interval.</li>
+                    <li>If \(f''(x) < 0\) on an interval, then \(f\) is concave downward on that interval.</li>
+                </ul>
+                <p>An inflection point occurs at \(x = c\) if \(f''(c) = 0\) or \(f''(c)\) does not exist, and \(f''\) changes sign at \(c\).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Find the intervals of concavity and inflection points for \(f(x) = x^3 - 6x^2 + 9x + 1\).</p>
+                <div class="solution">
+                    <p>\(f'(x) = 3x^2 - 12x + 9\)</p>
+                    <p>\(f''(x) = 6x - 12\)</p>
+                    <p>Set \(f''(x) = 0\): \(6x - 12 = 0 \Rightarrow x = 2\)</p>
+                    <p>Testing regions:</p>
+                    <ul>
+                        <li>For \(x < 2\): \(f''(1) = 6 - 12 = -6 < 0\), so \(f\) is concave downward on \((-\infty, 2)\).</li>
+                        <li>For \(x > 2\): \(f''(3) = 18 - 12 = 6 > 0\), so \(f\) is concave upward on \((2, \infty)\).</li>
+                    </ul>
+                    <p>Since \(f''(x)\) changes sign at \(x = 2\), there is an inflection point at \(x = 2\).</p>
+                    <p>Inflection point: \((2, f(2)) = (2, 8 - 24 + 18 + 1) = (2, 3)\)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="second-derivative-test">
+            <h3>Second Derivative Test for Extrema</h3>
+            
+            <div class="theorem-box">
+                <h4>Second Derivative Test</h4>
+                <p>If \(f'(c) = 0\) and \(f\) is twice differentiable near \(c\):</p>
+                <ol>
+                    <li>If \(f''(c) > 0\), then \(f\) has a local minimum at \(x = c\).</li>
+                    <li>If \(f''(c) < 0\), then \(f\) has a local maximum at \(x = c\).</li>
+                    <li>If \(f''(c) = 0\), the test is inconclusive.</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Use the Second Derivative Test to classify the critical points of \(f(x) = x^3 - 6x^2 + 9x + 1\).</p>
+                <div class="solution">
+                    <p>Critical points: \(x = 1\) and \(x = 3\)</p>
+                    <p>\(f''(x) = 6x - 12\)</p>
+                    <p>\(f''(1) = 6 - 12 = -6 < 0\), so \(f\) has a local maximum at \(x = 1\).</p>
+                    <p>\(f''(3) = 18 - 12 = 6 > 0\), so \(f\) has a local minimum at \(x = 3\).</p>
+                    <p>This confirms our results from the First Derivative Test.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="curve-sketching">
+            <h3>Curve Sketching</h3>
+            
+            <div class="theory-box">
+                <h4>Steps for Curve Sketching</h4>
+                <ol>
+                    <li>Find the domain of the function.</li>
+                    <li>Find any symmetry, asymptotes, or special points.</li>
+                    <li>Find the critical points and determine where the function is increasing/decreasing.</li>
+                    <li>Find where the concavity changes and identify inflection points.</li>
+                    <li>Plot key points and sketch the curve.</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Sketch the curve \(f(x) = x^3 - 6x^2 + 9x + 1\).</p>
+                <div class="solution">
+                    <p>Domain: All real numbers</p>
+                    <p>Behavior as \(x \to \pm\infty\): Since the leading term is \(x^3\), \(f(x) \to \infty\) as \(x \to \infty\) and \(f(x) \to -\infty\) as \(x \to -\infty\).</p>
+                    <p>Critical points: \(x = 1\) (local max) and \(x = 3\) (local min)</p>
+                    <p>Inflection point: \(x = 2\)</p>
+                    <p>Key points: \((0, 1)\), \((1, 5)\), \((2, 3)\), \((3, 1)\), \((4, 5)\)</p>
+                    <p>The function is:</p>
+                    <ul>
+                        <li>Increasing on \((-\infty, 1)\) and \((3, \infty)\)</li>
+                        <li>Decreasing on \((1, 3)\)</li>
+                        <li>Concave downward on \((-\infty, 2)\)</li>
+                        <li>Concave upward on \((2, \infty)\)</li>
+                    </ul>
+                    <p>With this information, we can sketch the curve.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="connecting-derivatives">
+            <h3>Connecting Functions and Their Derivatives</h3>
+            
+            <div class="theory-box">
+                <h4>Function-Derivative Relationships</h4>
+                <ul>
+                    <li>If \(f'(c) = 0\), then the tangent line to \(f\) at \(x = c\) is horizontal.</li>
+                    <li>If \(f'(x) > 0\) on an interval, then the graph of \(f\) is rising on that interval.</li>
+                    <li>If \(f'(x) < 0\) on an interval, then the graph of \(f\) is falling on that interval.</li>
+                    <li>If \(f''(x) > 0\) on an interval, then the graph of \(f\) is concave up (smiling) on that interval.</li>
+                    <li>If \(f''(x) < 0\) on an interval, then the graph of \(f\) is concave down (frowning) on that interval.</li>
+                    <li>If \(f''(c) = 0\) and \(f''\) changes sign at \(c\), then \(f\) has an inflection point at \(x = c\).</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Given the graph of \(f'(x)\) below, describe the behavior of \(f(x)\).</p>
+                <div class="solution">
+                    <p><em>[This would include a graph of \(f'(x)\) in an actual implementation]</em></p>
+                    <p>For a sample \(f'(x)\) that is positive on \((-\infty, -1)\), negative on \((-1, 3)\), and positive on \((3, \infty)\):</p>
+                    <ul>
+                        <li>\(f(x)\) is increasing on \((-\infty, -1)\)</li>
+                        <li>\(f(x)\) is decreasing on \((-1, 3)\)</li>
+                        <li>\(f(x)\) is increasing on \((3, \infty)\)</li>
+                        <li>\(f(x)\) has a local maximum at \(x = -1\)</li>
+                        <li>\(f(x)\) has a local minimum at \(x = 3\)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="optimization">
+            <h3>Optimization Problems</h3>
+            
+            <div class="theory-box">
+                <h4>Steps for Solving Optimization Problems</h4>
+                <ol>
+                    <li>Identify what needs to be maximized or minimized.</li>
+                    <li>Express this quantity as a function of one variable.</li>
+                    <li>Determine the domain relevant to the problem.</li>
+                    <li>Find critical points within the domain.</li>
+                    <li>Evaluate the function at critical points and endpoints to find the optimal value.</li>
+                    <li>Verify your answer makes sense in context.</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Find the dimensions of a rectangle with perimeter 100 units that has the maximum possible area.</p>
+                <div class="solution">
+                    <p>Let \(x\) = length and \(y\) = width of the rectangle.</p>
+                    <p>Perimeter: \(2x + 2y = 100\) so \(y = 50 - x\).</p>
+                    <p>Area: \(A = xy = x(50 - x) = 50x - x^2\)</p>
+                    <p>Domain: \(0 < x < 50\) (both dimensions must be positive)</p>
+                    <p>\(A'(x) = 50 - 2x\)</p>
+                    <p>Set \(A'(x) = 0\): \(50 - 2x = 0 \Rightarrow x = 25\)</p>
+                    <p>Since \(A''(x) = -2 < 0\), this is a maximum.</p>
+                    <p>So \(x = 25\) and \(y = 50 - 25 = 25\).</p>
+                    <p>The rectangle with maximum area is a square with sides of 25 units.</p>
+                    <p>Maximum area: \(A = 25 \times 25 = 625\) square units.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="implicit-relations">
+            <h3>Behaviors of Implicit Relations</h3>
+            
+            <div class="theory-box">
+                <h4>Analyzing Implicit Functions</h4>
+                <p>For an implicit function \(F(x, y) = 0\):</p>
+                <ul>
+                    <li>To find \(\frac{dy}{dx}\), use implicit differentiation</li>
+                    <li>To find critical points, solve \(\frac{dy}{dx} = 0\) or points where \(\frac{dy}{dx}\) doesn't exist</li>
+                    <li>To find concavity, calculate \(\frac{d^2y}{dx^2}\) and analyze its sign</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Analyze the implicit curve \(x^2 + y^2 = 25\) (a circle of radius 5).</p>
+                <div class="solution">
+                    <p>Taking the derivative with respect to \(x\):</p>
+                    <p>\(2x + 2y\frac{dy}{dx} = 0\)</p>
+                    <p>\(\frac{dy}{dx} = -\frac{x}{y}\)</p>
+                    <p>Critical points (where \(\frac{dy}{dx} = 0\)): When \(x = 0\), so \((0, 5)\) and \((0, -5)\).</p>
+                    <p>Points where \(\frac{dy}{dx}\) doesn't exist: When \(y = 0\), so \((5, 0)\) and \((-5, 0)\).</p>
+                    <p>These are the "top", "bottom", "right", and "left" points of the circle, as expected.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">

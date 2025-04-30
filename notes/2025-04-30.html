@@ -183,6 +183,141 @@
             </div>
         </section>
 
+        <section id="differentiation-intro">
+            <h3>Introduction to Differentiation</h3>
+            <div class="theory-box">
+                <h4>The Fundamental Question of Calculus</h4>
+                <p>Can change occur at an instant? Differentiation answers this question by quantifying instantaneous rates of change.</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Average Rate of Change</h4>
+                <p>The average rate of change of a function \(f\) over an interval \([a, a+h]\) is:</p>
+                <p class="formula">\(\frac{f(a+h) - f(a)}{h}\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Instantaneous Rate of Change (Derivative)</h4>
+                <p>The instantaneous rate of change at \(x = a\) is defined as the limit of the average rate of change as the interval approaches zero:</p>
+                <p class="formula">\(f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\)</p>
+            </div>
+        </section>
+
+        <section id="derivative-notation">
+            <h3>Derivative Notation</h3>
+            <div class="formula-box">
+                <h4>Multiple Notations for Derivatives</h4>
+                <p>For a function \(y = f(x)\):</p>
+                <ul>
+                    <li>Lagrange notation: \(f'(x)\)</li>
+                    <li>Leibniz notation: \(\frac{dy}{dx}\) or \(\frac{d}{dx}f(x)\)</li>
+                    <li>Newton notation: \(\dot{y}\) (for time derivatives)</li>
+                    <li>Prime notation (for higher derivatives): \(f''(x), f'''(x), f^{(n)}(x)\)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="estimating-derivatives">
+            <h3>Estimating Derivatives</h3>
+            <div class="technique-box">
+                <h4>From Graphs</h4>
+                <p>The derivative \(f'(a)\) at a point is the slope of the tangent line to the curve at \(x = a\).</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>From Tables</h4>
+                <p>For a table of values, approximate \(f'(a)\) using difference quotients with values near \(a\):</p>
+                <p class="formula">\(f'(a) \approx \frac{f(a+h) - f(a)}{h}\) for small \(h\)</p>
+            </div>
+        </section>
+
+        <section id="differentiability">
+            <h3>Differentiability and Continuity</h3>
+            <div class="theorem-box">
+                <h4>Connection Between Differentiability and Continuity</h4>
+                <p>If a function \(f\) is differentiable at \(x = a\), then \(f\) is continuous at \(x = a\).</p>
+                <p>However, the converse is not true: continuity does not guarantee differentiability.</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Conditions for Non-Differentiability</h4>
+                <p>A function is not differentiable at points where:</p>
+                <ul>
+                    <li>There is a vertical tangent (infinite slope)</li>
+                    <li>There is a corner or cusp (left and right derivatives exist but are not equal)</li>
+                    <li>There is a discontinuity</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="basic-derivative-rules">
+            <h3>Basic Derivative Rules</h3>
+            <div class="formula-box">
+                <h4>Power Rule</h4>
+                <p>\(\frac{d}{dx}[x^n] = nx^{n-1}\) for any real number \(n\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Constant Rule</h4>
+                <p>\(\frac{d}{dx}[c] = 0\) for any constant \(c\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Constant Multiple Rule</h4>
+                <p>\(\frac{d}{dx}[cf(x)] = c \cdot f'(x)\) for any constant \(c\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Sum and Difference Rules</h4>
+                <p>\(\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)\)</p>
+            </div>
+        </section>
+
+        <section id="common-derivatives">
+            <h3>Common Derivatives</h3>
+            <div class="formula-box">
+                <h4>Trigonometric Functions</h4>
+                <ul>
+                    <li>\(\frac{d}{dx}[\sin x] = \cos x\)</li>
+                    <li>\(\frac{d}{dx}[\cos x] = -\sin x\)</li>
+                    <li>\(\frac{d}{dx}[\tan x] = \sec^2 x\)</li>
+                    <li>\(\frac{d}{dx}[\cot x] = -\csc^2 x\)</li>
+                    <li>\(\frac{d}{dx}[\sec x] = \sec x \tan x\)</li>
+                    <li>\(\frac{d}{dx}[\csc x] = -\csc x \cot x\)</li>
+                </ul>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Exponential and Logarithmic Functions</h4>
+                <ul>
+                    <li>\(\frac{d}{dx}[e^x] = e^x\)</li>
+                    <li>\(\frac{d}{dx}[a^x] = a^x \ln a\)</li>
+                    <li>\(\frac{d}{dx}[\ln x] = \frac{1}{x}\)</li>
+                    <li>\(\frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}\)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="product-quotient-rules">
+            <h3>Product and Quotient Rules</h3>
+            <div class="formula-box">
+                <h4>Product Rule</h4>
+                <p>\(\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)\)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Quotient Rule</h4>
+                <p>\(\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}\) where \(g(x) \neq 0\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Applying Quotient Rule</h4>
+                <p>Find \(\frac{d}{dx}[\tan x]\) using the quotient rule:</p>
+                <p>\(\tan x = \frac{\sin x}{\cos x}\)</p>
+                <p>\(\frac{d}{dx}[\tan x] = \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x\)</p>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">

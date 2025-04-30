@@ -1,0 +1,256 @@
+here is a file that I will use to annotate what I would like to add to each day's notes content 
+
+for day 1, I would like to cover the following topics as concisely but sufficiently as possible:
+
+Introducing Calculus: Can Change Occur at an Instant?
+
+Defining Limits and Using Limit Notation
+
+Estimating Limit Values from Graphs
+
+Estimating Limit Values from Tables
+
+Determining Limits Using Algebraic Properties of Limits
+
+Determining Limits Using Algebraic Manipulation
+
+Selecting Procedures for Determining Limits
+
+Determining Limits Using the Squeeze Theorem
+
+Connecting Multiple Representations of Limits
+
+Exploring Types of Discontinuities
+
+Defining Continuity at a Point
+
+Confirming Continuity over an Interval
+
+Removing Discontinuities
+
+Connecting Infinite Limits and Vertical Asymptotes
+
+Connecting Limits at Infinity and Horizontal Asymptotes
+
+Working with the Intermediate Value Theorem (IVT)
+
+Differentiation—Definition and Basic Derivative Rules
+Defining Average and Instantaneous Rates of Change at a Point
+
+Defining the Derivative of a Function and Using Derivative Notation
+
+Estimating Derivatives of a Function at a Point
+
+Connecting Differentiability and Continuity: Determining When Derivatives Do and Do Not Exist
+
+Applying the Power Rule
+
+Derivative Rules: Constant, Sum, Difference, and Constant Multiple
+
+Derivatives of cos x, sin x, e^x, and ln x
+
+The Product Rule
+
+The Quotient Rule
+
+Finding the Derivatives of Tangent, Cotangent, Secant, and/or Cosecant Functions
+
+
+For day 2:
+
+Differentiation—Composite, Implicit, and Inverse Functions
+The Chain Rule
+
+Implicit Differentiation
+
+Differentiating Inverse Functions
+
+Differentiating Inverse Trigonometric Functions
+
+Selecting Procedures for Calculating Derivatives
+
+Calculating Higher-Order Derivatives
+
+day 3:
+
+ Contextual Applications of Differentiation
+Interpreting the Meaning of the Derivative in Context
+
+Straight-Line Motion: Connecting Position, Velocity, and Acceleration
+
+Rates of Change in Applied Contexts Other Than Motion
+
+Introduction to Related Rates
+
+Solving Related Rates Problems
+
+Approximating Values of a Function Using Local Linearity and Linearization
+
+Using L'Hospital's Rule for Determining Limits of Indeterminate Forms
+
+
+day 4:
+
+Analytical Applications of Differentiation
+Using the Mean Value Theorem
+
+Extreme Value Theorem, Global Versus Local Extrema, and Critical Points
+
+Determining Intervals on Which a Function Is Increasing or Decreasing
+
+Using the First Derivative Test to Determine Relative (Local) Extrema
+
+Using the Candidates Test to Determine Absolute (Global) Extrema
+
+Determining Concavity of Functions over Their Domains
+
+Using the Second Derivative Test to Determine Extrema
+
+Sketching Graphs of Function and Their Derivatives
+
+Connecting a Function, Its First Derivative, and Its Second Derivative
+
+Introduction to Optimization Problems
+
+Solving Optimization Problems
+
+Exploring Behaviors of Implicit Relations
+
+day 5:
+
+Integration and Accumulation of Change
+Exploring Accumulations of Change
+
+Approximating Areas with Riemann Sums
+
+Riemann Sums, Summation Notation, and Definite Integral Notation
+
+The Fundamental Theorem of Calculus and Accumulation Functions
+
+Interpreting the Behavior of Accumulation Functions Involving Area
+
+Applying Properties of Definite Integrals
+
+The Fundamental Theorem of Calculus and Definite Integrals
+
+Finding Antiderivatives and Indefinite Integrals: Basic Rules and Notation
+
+Integrating Using Substitution (trig and inverse trig)
+
+Day 6:
+
+Integrating Functions Using Long Division and Completing the Square
+
+Integration Using Integration by Parts
+
+Using Linear Partial Fractions
+
+Evaluating Improper Integrals
+
+Selecting Techniques for Antidifferentiation
+
+Day 7: 
+
+Differential Equations
+Modeling Situations with Differential Equations
+
+Verifying Solutions for Differential Equations
+
+Sketching Slope Fields
+
+Reasoning Using Slope Fields
+
+Approximating Solutions Using Euler’s Method
+
+Finding General Solutions Using Separation of Variables
+
+Finding Particular Solutions Using Initial Conditions and Separation of Variables
+
+Exponential Models with Differential Equations
+
+Logistic Models with Differential Equations
+
+Day 8:
+
+Applications of Integration
+Finding the Average Value of a Function on an Interval
+
+Connecting Position, Velocity, and Acceleration Functions Using Integrals
+
+Using Accumulation Functions and Definite Integrals in Applied Contexts
+
+Finding the Area Between Curves Expressed as Functions of x
+
+Finding the Area Between Curves Expressed as Functions of y
+
+Finding the Area Between Curves That Intersect at More Than Two Points
+
+Volumes with Cross-Sections: Squares and Rectangles
+
+Volumes with Cross-Sections: Triangles and Semicircles
+
+Volume with Disc Method: Revolving Around the x- or y-Axis
+
+Volume with Disc Method: Revolving Around Other Axes
+
+Volume with Washer Method: Revolving Around the x- or y-Axis
+
+Volume with Washer Method: Revolving Around Other Axes
+
+The Arc Length of a Smooth, Planar Curve and Distance Traveled
+
+Day 9:
+Parametric Equations, Polar Coordinates, and Vector-Valued Functions
+Defining and Differentiating Parametric Equations
+
+Second Derivatives of Parametric Equations
+
+Finding Arc Lengths of Curves Given by Parametric Equations
+
+Defining and Differentiating Vector-Valued Functions
+
+Integrating Vector-Valued Functions
+
+Solving Motion Problems Using Parametric and Vector-Valued Functions
+
+Defining Polar Coordinates and Differentiating in Polar Form
+
+Finding the Area of a Polar Region or the Area Bounded by a Single Polar Curve
+
+Finding the Area of the Region Bounded by Two Polar Curves
+
+Day 10:
+
+Infinite Sequences and Series
+Defining Convergent and Divergent Infinite Series
+
+Working with Geometric Series
+
+The nth Term Test for Divergence
+
+Integral Test for Convergence
+
+Harmonic Series and p-Series
+
+Comparison Tests for Convergence
+
+Alternating Series Test for Convergence
+
+Ratio Test for Convergence
+
+Determining Absolute or Conditional Convergence
+
+Alternating Series Error Bound
+
+Finding Taylor Polynomial Approximations of Functions
+
+Lagrange Error Bound
+
+Radius and Interval of Convergence of Power Series
+
+Finding Taylor or Maclaurin Series for a Function
+
+Representing Functions as Power Series
+
+
+Rememember that all of this is in addition to the previously stated assignments which are the FRQs. 

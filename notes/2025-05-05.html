@@ -37,8 +37,196 @@
             <p>Today we'll continue our exploration of integration techniques and applications, building on yesterday's foundations.</p>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="polynomial-division">
+            <h3>Integrating Functions Using Long Division and Completing the Square</h3>
+            <div class="theory-box">
+                <h4>Long Division for Rational Functions</h4>
+                <p>When integrating a rational function \(\frac{P(x)}{Q(x)}\) where the degree of P is greater than or equal to the degree of Q, perform polynomial long division first:</p>
+                <p>\(\frac{P(x)}{Q(x)} = S(x) + \frac{R(x)}{Q(x)}\)</p>
+                <p>where \(S(x)\) is the quotient and \(\frac{R(x)}{Q(x)}\) is the remainder, with the degree of R less than the degree of Q.</p>
+                <p>This simplifies the integration to: \(\int \frac{P(x)}{Q(x)} \, dx = \int S(x) \, dx + \int \frac{R(x)}{Q(x)} \, dx\)</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Completing the Square</h4>
+                <p>For integrals containing expressions like \(ax^2 + bx + c\) in the denominator or under a square root:</p>
+                <ol>
+                    <li>Factor out the coefficient of \(x^2\): \(a(x^2 + \frac{b}{a}x + \frac{c}{a})\)</li>
+                    <li>Complete the square: \(a(x^2 + \frac{b}{a}x + (\frac{b}{2a})^2 - (\frac{b}{2a})^2 + \frac{c}{a})\)</li>
+                    <li>Rearrange: \(a((x + \frac{b}{2a})^2 + \frac{c}{a} - \frac{b^2}{4a^2})\)</li>
+                    <li>Simplify: \(a(x + \frac{b}{2a})^2 + \frac{4ac-b^2}{4a}\)</li>
+                </ol>
+                <p>This often transforms the integral into a form that can be evaluated using standard formulas or substitution.</p>
+            </div>
+        </section>
+
+        <section id="integration-by-parts">
+            <h3>Integration Using Integration by Parts</h3>
+            <div class="theorem-box">
+                <h4>Integration by Parts Formula</h4>
+                <p>Based on the product rule for differentiation, integration by parts allows us to integrate products of functions:</p>
+                <p class="formula">
+                    \[ \int u \, dv = uv - \int v \, du \]
+                </p>
+                <p>Where:</p>
+                <ul>
+                    <li>\(u\) and \(dv\) are functions of \(x\)</li>
+                    <li>\(v = \int dv \, dx\) is an antiderivative of \(dv\)</li>
+                    <li>\(du = \frac{du}{dx} \, dx\) is the differential of \(u\)</li>
+                </ul>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Strategy for Choosing \(u\) and \(dv\)</h4>
+                <p>Use the LIATE priority order:</p>
+                <ol>
+                    <li><strong>L</strong>: Logarithmic functions (ln x, log x)</li>
+                    <li><strong>I</strong>: Inverse trigonometric functions (arcsin x, arctan x)</li>
+                    <li><strong>A</strong>: Algebraic functions (polynomials, roots)</li>
+                    <li><strong>T</strong>: Trigonometric functions (sin x, cos x)</li>
+                    <li><strong>E</strong>: Exponential functions (e^x, a^x)</li>
+                </ol>
+                <p>Choose \(u\) from higher in the list and \(dv\) from lower in the list.</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: \(\int x \cdot e^x \, dx\)</h4>
+                <p>Let \(u = x\) and \(dv = e^x \, dx\)</p>
+                <p>Then \(du = dx\) and \(v = e^x\)</p>
+                <p>\(\int x \cdot e^x \, dx = x \cdot e^x - \int e^x \, dx = x \cdot e^x - e^x + C = e^x(x - 1) + C\)</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Repeated Integration by Parts</h4>
+                <p>Some integrals require applying integration by parts multiple times:</p>
+                <p>Example: \(\int x^2 e^x \, dx\) requires two applications</p>
+                <p>For cyclic patterns like \(\int e^x \sin x \, dx\), the formula can be applied twice to create an equation with the original integral, which can then be solved algebraically.</p>
+            </div>
+        </section>
+
+        <section id="partial-fractions">
+            <h3>Using Linear Partial Fractions</h3>
+            <div class="theorem-box">
+                <h4>Partial Fraction Decomposition</h4>
+                <p>For a proper rational function (degree of numerator < degree of denominator), we decompose it into simpler fractions based on the factorization of the denominator.</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Decomposition Forms</h4>
+                <ol>
+                    <li>For distinct linear factors: \(\frac{P(x)}{(x-a)(x-b)...(x-n)} = \frac{A}{x-a} + \frac{B}{x-b} + ... + \frac{N}{x-n}\)</li>
+                    <li>For repeated linear factors: \(\frac{P(x)}{(x-a)^m} = \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + ... + \frac{A_m}{(x-a)^m}\)</li>
+                    <li>For irreducible quadratic factors: \(\frac{P(x)}{(x^2+px+q)} = \frac{Ax+B}{x^2+px+q}\)</li>
+                    <li>For repeated irreducible quadratic factors: \(\frac{P(x)}{(x^2+px+q)^m} = \frac{A_1x+B_1}{x^2+px+q} + \frac{A_2x+B_2}{(x^2+px+q)^2} + ... + \frac{A_mx+B_m}{(x^2+px+q)^m}\)</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: \(\int \frac{5x-3}{(x-2)(x+1)} \, dx\)</h4>
+                <p>Decompose as \(\frac{5x-3}{(x-2)(x+1)} = \frac{A}{x-2} + \frac{B}{x+1}\)</p>
+                <p>Solve for A and B by multiplying both sides by (x-2)(x+1):</p>
+                <p>5x-3 = A(x+1) + B(x-2)</p>
+                <p>When x = 2: 5(2)-3 = 7 = A(3), so A = 7/3</p>
+                <p>When x = -1: 5(-1)-3 = -8 = B(-3), so B = 8/3</p>
+                <p>Thus, \(\int \frac{5x-3}{(x-2)(x+1)} \, dx = \frac{7}{3}\int \frac{1}{x-2} \, dx + \frac{8}{3}\int \frac{1}{x+1} \, dx\)</p>
+                <p>\(= \frac{7}{3}\ln|x-2| + \frac{8}{3}\ln|x+1| + C\)</p>
+            </div>
+        </section>
+
+        <section id="improper-integrals">
+            <h3>Evaluating Improper Integrals</h3>
+            <div class="theory-box">
+                <h4>Types of Improper Integrals</h4>
+                <p>Improper integrals involve either:</p>
+                <ol>
+                    <li>Infinite limits of integration, or</li>
+                    <li>Integrands with vertical asymptotes within the interval of integration</li>
+                </ol>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Type 1: Infinite Limits</h4>
+                <p>\(\int_a^{\infty} f(x) \, dx = \lim_{t \to \infty} \int_a^t f(x) \, dx\)</p>
+                <p>\(\int_{-\infty}^b f(x) \, dx = \lim_{t \to -\infty} \int_t^b f(x) \, dx\)</p>
+                <p>\(\int_{-\infty}^{\infty} f(x) \, dx = \int_{-\infty}^c f(x) \, dx + \int_c^{\infty} f(x) \, dx\) (for any value c)</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Type 2: Vertical Asymptotes</h4>
+                <p>If f has a vertical asymptote at x = c within [a,b]:</p>
+                <p>\(\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx\)</p>
+                <p>Where: \(\int_a^c f(x) \, dx = \lim_{t \to c^-} \int_a^t f(x) \, dx\)</p>
+                <p>And: \(\int_c^b f(x) \, dx = \lim_{t \to c^+} \int_t^b f(x) \, dx\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: \(\int_1^{\infty} \frac{1}{x^2} \, dx\)</h4>
+                <p>\(\int_1^{\infty} \frac{1}{x^2} \, dx = \lim_{t \to \infty} \int_1^t \frac{1}{x^2} \, dx\)</p>
+                <p>\(= \lim_{t \to \infty} [-\frac{1}{x}]_1^t = \lim_{t \to \infty} (-\frac{1}{t} - (-1)) = \lim_{t \to \infty} (1 - \frac{1}{t}) = 1\)</p>
+                <p>The improper integral converges to 1.</p>
+            </div>
+            
+            <div class="theorem-box">
+                <h4>Convergence Tests for Improper Integrals</h4>
+                <ol>
+                    <li><strong>p-integrals</strong>: \(\int_1^{\infty} \frac{1}{x^p} \, dx\) converges when p > 1, diverges when p ≤ 1</li>
+                    <li><strong>Comparison Test</strong>: If 0 ≤ f(x) ≤ g(x) for x ≥ a, then:
+                        <ul>
+                            <li>If \(\int_a^{\infty} g(x) \, dx\) converges, then \(\int_a^{\infty} f(x) \, dx\) converges</li>
+                            <li>If \(\int_a^{\infty} f(x) \, dx\) diverges, then \(\int_a^{\infty} g(x) \, dx\) diverges</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="integration-strategies">
+            <h3>Selecting Techniques for Antidifferentiation</h3>
+            <div class="theory-box">
+                <h4>Integration Strategy Flowchart</h4>
+                <ol>
+                    <li><strong>Check for basic forms</strong>: Is this a basic function with a known antiderivative?</li>
+                    <li><strong>Try algebraic manipulation</strong>: Can the integrand be rewritten in a standard form?</li>
+                    <li><strong>Consider substitution</strong>: Is there a u-substitution that simplifies the integral?</li>
+                    <li><strong>Check for products</strong>: Does integration by parts help with products of functions?</li>
+                    <li><strong>Analyze rational functions</strong>: Can partial fractions decomposition be applied?</li>
+                    <li><strong>Look for trigonometric forms</strong>: Can trigonometric substitution or identities help?</li>
+                    <li><strong>Consider symmetry</strong>: Does the interval or function have symmetry properties?</li>
+                    <li><strong>Check for improper integrals</strong>: Are there infinite limits or vertical asymptotes?</li>
+                </ol>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Common Integration Patterns</h4>
+                <table>
+                    <tr>
+                        <th>Pattern</th>
+                        <th>Suggested Method</th>
+                    </tr>
+                    <tr>
+                        <td>Products of polynomials and exponentials/trigonometric functions</td>
+                        <td>Integration by parts</td>
+                    </tr>
+                    <tr>
+                        <td>Compositions of functions</td>
+                        <td>U-substitution</td>
+                    </tr>
+                    <tr>
+                        <td>Rational functions</td>
+                        <td>Partial fractions decomposition</td>
+                    </tr>
+                    <tr>
+                        <td>Expressions with square roots of quadratics</td>
+                        <td>Trigonometric substitution</td>
+                    </tr>
+                    <tr>
+                        <td>Products of sine and cosine with different arguments</td>
+                        <td>Use trigonometric identities</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">

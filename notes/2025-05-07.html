@@ -37,8 +37,391 @@
             <p>Today we'll focus on the various real-world applications of integration, including area, volume, arc length, and more.</p>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="average-value">
+            <h3>Average Value of a Function on an Interval</h3>
+            
+            <div class="theory-box">
+                <h4>Average Value Formula</h4>
+                <p>The average value of a continuous function \(f(x)\) on the interval \([a,b]\) is given by:</p>
+                <p class="formula">
+                    \[ f_{avg} = \frac{1}{b-a} \int_{a}^{b} f(x) \, dx \]
+                </p>
+                <p>This represents the height of a rectangle with the same area as under the curve on \([a,b]\).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Find the average value of \(f(x) = x^2\) on the interval \([0,3]\).</p>
+                <div class="solution">
+                    <p>\(f_{avg} = \frac{1}{3-0} \int_{0}^{3} x^2 \, dx = \frac{1}{3} \left[ \frac{x^3}{3} \right]_{0}^{3} = \frac{1}{3} \cdot \frac{27}{3} = 3\)</p>
+                    <p>The average value of \(f(x) = x^2\) on \([0,3]\) is 3.</p>
+                </div>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Mean Value Theorem for Integrals</h4>
+                <p>If \(f\) is continuous on \([a,b]\), then there exists at least one point \(c \in [a,b]\) such that:</p>
+                <p class="formula">
+                    \[ f(c) = \frac{1}{b-a} \int_{a}^{b} f(x) \, dx \]
+                </p>
+                <p>That is, the function equals its average value at some point in the interval.</p>
+            </div>
+        </section>
+
+        <section id="position-velocity-acceleration">
+            <h3>Connecting Position, Velocity, and Acceleration Using Integrals</h3>
+            
+            <div class="theory-box">
+                <h4>Key Relationships</h4>
+                <p>If \(s(t)\), \(v(t)\), and \(a(t)\) represent position, velocity, and acceleration functions respectively:</p>
+                <ul>
+                    <li>\(v(t) = s'(t)\) and \(s(t) = \int v(t) \, dt + C\)</li>
+                    <li>\(a(t) = v'(t)\) and \(v(t) = \int a(t) \, dt + C\)</li>
+                </ul>
+                <p>The displacement over interval \([t_1, t_2]\) is given by:</p>
+                <p class="formula">
+                    \[ s(t_2) - s(t_1) = \int_{t_1}^{t_2} v(t) \, dt \]
+                </p>
+                <p>The change in velocity over interval \([t_1, t_2]\) is given by:</p>
+                <p class="formula">
+                    \[ v(t_2) - v(t_1) = \int_{t_1}^{t_2} a(t) \, dt \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>A particle moves along a line with acceleration \(a(t) = 6t - 2\) m/s². If \(v(0) = 5\) m/s and \(s(0) = 3\) m, find the position function \(s(t)\).</p>
+                <div class="solution">
+                    <p>First, find the velocity function by integrating acceleration:</p>
+                    <p>\(v(t) = \int a(t) \, dt = \int (6t - 2) \, dt = 3t^2 - 2t + C_1\)</p>
+                    <p>Using \(v(0) = 5\):</p>
+                    <p>\(v(0) = 0 - 0 + C_1 = 5 \Rightarrow C_1 = 5\)</p>
+                    <p>So \(v(t) = 3t^2 - 2t + 5\)</p>
+                    <p>Now, find position by integrating velocity:</p>
+                    <p>\(s(t) = \int v(t) \, dt = \int (3t^2 - 2t + 5) \, dt = t^3 - t^2 + 5t + C_2\)</p>
+                    <p>Using \(s(0) = 3\):</p>
+                    <p>\(s(0) = 0 - 0 + 0 + C_2 = 3 \Rightarrow C_2 = 3\)</p>
+                    <p>Therefore, \(s(t) = t^3 - t^2 + 5t + 3\)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="applied-contexts">
+            <h3>Using Accumulation Functions and Definite Integrals in Applied Contexts</h3>
+            
+            <div class="theory-box">
+                <h4>Net Change Theorem</h4>
+                <p>The net change in quantity \(F\) whose rate of change is \(f\) over interval \([a,b]\) is:</p>
+                <p class="formula">
+                    \[ F(b) - F(a) = \int_{a}^{b} f(x) \, dx \]
+                </p>
+                <p>Applications include:</p>
+                <ul>
+                    <li>Total distance traveled: \(\int_{t_1}^{t_2} |v(t)| \, dt\)</li>
+                    <li>Net change in temperature: \(\int_{t_1}^{t_2} r(t) \, dt\) where \(r(t)\) is the rate of change of temperature</li>
+                    <li>Work done by a variable force: \(\int_{a}^{b} F(x) \, dx\)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>Water flows into a tank at a rate of \(r(t) = 10 - 0.5t^2\) gallons per minute, where \(t\) is measured in minutes. How much water flows into the tank during the first 4 minutes?</p>
+                <div class="solution">
+                    <p>The total amount of water is the integral of the rate function:</p>
+                    <p>\(\int_{0}^{4} (10 - 0.5t^2) \, dt = \left[ 10t - \frac{0.5t^3}{3} \right]_{0}^{4}\)</p>
+                    <p>\(= 10(4) - \frac{0.5(4^3)}{3} - 0 = 40 - \frac{32}{3} = 40 - 10.67 = 29.33\)</p>
+                    <p>Approximately 29.33 gallons of water flow into the tank during the first 4 minutes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="area-between-curves">
+            <h3>Finding the Area Between Curves</h3>
+            
+            <div class="theory-box">
+                <h4>Area Between Curves (Functions of x)</h4>
+                <p>The area between curves \(y = f(x)\) and \(y = g(x)\) from \(x = a\) to \(x = b\), where \(f(x) \geq g(x)\) on \([a,b]\), is:</p>
+                <p class="formula">
+                    \[ A = \int_{a}^{b} [f(x) - g(x)] \, dx \]
+                </p>
+            </div>
+
+            <div class="theory-box">
+                <h4>Area Between Curves (Functions of y)</h4>
+                <p>The area between curves \(x = f(y)\) and \(x = g(y)\) from \(y = c\) to \(y = d\), where \(f(y) \geq g(y)\) on \([c,d]\), is:</p>
+                <p class="formula">
+                    \[ A = \int_{c}^{d} [f(y) - g(y)] \, dy \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example 1: Functions of x</h4>
+                <p>Find the area of the region bounded by \(y = x^2\) and \(y = x + 2\).</p>
+                <div class="solution">
+                    <p>First, find the points of intersection:</p>
+                    <p>\(x^2 = x + 2\)</p>
+                    <p>\(x^2 - x - 2 = 0\)</p>
+                    <p>\((x - 2)(x + 1) = 0\)</p>
+                    <p>\(x = 2\) or \(x = -1\)</p>
+                    <p>For \(x \in [-1, 2]\), we need to determine which function is greater:</p>
+                    <p>At \(x = 0\): \(x^2 = 0\) and \(x + 2 = 2\), so \(x + 2 > x^2\)</p>
+                    <p>The area is:</p>
+                    <p>\(A = \int_{-1}^{2} [(x + 2) - x^2] \, dx = \int_{-1}^{2} (x + 2 - x^2) \, dx\)</p>
+                    <p>\(= \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_{-1}^{2}\)</p>
+                    <p>\(= \left[ 2 + 4 - \frac{8}{3} \right] - \left[ \frac{1}{2} - 2 - \frac{-1}{3} \right]\)</p>
+                    <p>\(= \left[ 2 + 4 - \frac{8}{3} \right] - \left[ \frac{1}{2} - 2 + \frac{1}{3} \right]\)</p>
+                    <p>\(= 6 - \frac{8}{3} - \frac{1}{2} + 2 - \frac{1}{3}\)</p>
+                    <p>\(= 8 - \frac{8}{3} - \frac{3}{6} - \frac{2}{6}\)</p>
+                    <p>\(= 8 - \frac{8}{3} - \frac{5}{6}\)</p>
+                    <p>\(= \frac{9}{2}\)</p>
+                    <p>The area is \(\frac{9}{2}\) square units.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example 2: Functions of y</h4>
+                <p>Find the area of the region bounded by \(x = y^2\) and \(x = 4\) for \(0 \leq y \leq 2\).</p>
+                <div class="solution">
+                    <p>Since these are functions of \(y\), we integrate with respect to \(y\):</p>
+                    <p>\(A = \int_{0}^{2} [4 - y^2] \, dy = \left[ 4y - \frac{y^3}{3} \right]_{0}^{2}\)</p>
+                    <p>\(= \left[ 8 - \frac{8}{3} \right] - 0 = 8 - \frac{8}{3} = \frac{24 - 8}{3} = \frac{16}{3}\)</p>
+                    <p>The area is \(\frac{16}{3}\) square units.</p>
+                </div>
+            </div>
+
+            <div class="theory-box">
+                <h4>Multiple Intersection Points</h4>
+                <p>When curves intersect at more than two points, divide the region into subregions at each intersection point. For each subregion, determine which curve is above the other, then find the area of each subregion separately.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example 3: Multiple Intersections</h4>
+                <p>Find the area of the region bounded by \(y = \sin(x)\) and \(y = \cos(x)\) from \(x = 0\) to \(x = \pi\).</p>
+                <div class="solution">
+                    <p>First, find intersection points by solving \(\sin(x) = \cos(x)\):</p>
+                    <p>\(\sin(x) = \cos(x)\)</p>
+                    <p>\(\sin(x) - \cos(x) = 0\)</p>
+                    <p>\(\tan(x) = 1\)</p>
+                    <p>\(x = \frac{\pi}{4}\) (in the first quadrant)</p>
+                    <p>\(x = \frac{5\pi}{4}\) (in the third quadrant, outside our interval)</p>
+                    <p>So there's one intersection point in our interval at \(x = \frac{\pi}{4}\).</p>
+                    <p>For \(0 \leq x \leq \frac{\pi}{4}\), \(\cos(x) \geq \sin(x)\).</p>
+                    <p>For \(\frac{\pi}{4} \leq x \leq \pi\), \(\sin(x) \geq \cos(x)\).</p>
+                    <p>The total area is:</p>
+                    <p>\(A = \int_{0}^{\frac{\pi}{4}} [\cos(x) - \sin(x)] \, dx + \int_{\frac{\pi}{4}}^{\pi} [\sin(x) - \cos(x)] \, dx\)</p>
+                    <p>\(= \left[ \sin(x) + \cos(x) \right]_{0}^{\frac{\pi}{4}} + \left[ -\cos(x) - \sin(x) \right]_{\frac{\pi}{4}}^{\pi}\)</p>
+                    <p>\(= \left[ \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \right] - [0 + 1] + \left[ 1 - 0 \right] - \left[ -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \right]\)</p>
+                    <p>\(= \sqrt{2} - 1 + 1 + \sqrt{2} = 2\sqrt{2}\)</p>
+                    <p>The area is \(2\sqrt{2}\) square units.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="volumes-cross-sections">
+            <h3>Volumes with Cross-Sections</h3>
+            
+            <div class="theory-box">
+                <h4>Volume Formula with Cross-Sections</h4>
+                <p>If \(A(x)\) is the area of a cross-section perpendicular to the x-axis at point \(x\), then the volume of the solid from \(x = a\) to \(x = b\) is:</p>
+                <p class="formula">
+                    \[ V = \int_{a}^{b} A(x) \, dx \]
+                </p>
+                <p>Common cross-sectional shapes:</p>
+                <ul>
+                    <li>Squares: \(A(x) = [f(x)]^2\)</li>
+                    <li>Rectangles: \(A(x) = f(x) \cdot g(x)\)</li>
+                    <li>Triangles: \(A(x) = \frac{1}{2} \cdot \text{base} \cdot \text{height}\)</li>
+                    <li>Semicircles: \(A(x) = \frac{\pi [f(x)]^2}{2}\)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Square Cross-Sections</h4>
+                <p>Find the volume of a solid with square cross-sections perpendicular to the x-axis, where the base of the solid is the region bounded by \(y = \sqrt{x}\), \(y = 0\), and \(x = 4\).</p>
+                <div class="solution">
+                    <p>The square cross-section at position \(x\) has side length equal to the height of the curve at \(x\), which is \(\sqrt{x}\).</p>
+                    <p>The area of the square cross-section is \(A(x) = [\sqrt{x}]^2 = x\).</p>
+                    <p>The volume is:</p>
+                    <p>\(V = \int_{0}^{4} x \, dx = \left[ \frac{x^2}{2} \right]_{0}^{4} = \frac{16}{2} - 0 = 8\)</p>
+                    <p>The volume of the solid is 8 cubic units.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="volumes-disc-method">
+            <h3>Volume with Disc Method</h3>
+            
+            <div class="theory-box">
+                <h4>Disc Method Formula</h4>
+                <p>For a solid of revolution formed by rotating the region between \(y = f(x)\) and the x-axis from \(x = a\) to \(x = b\) around the x-axis:</p>
+                <p class="formula">
+                    \[ V = \pi \int_{a}^{b} [f(x)]^2 \, dx \]
+                </p>
+                <p>For rotation around the y-axis:</p>
+                <p class="formula">
+                    \[ V = 2\pi \int_{a}^{b} x \cdot f(x) \, dx \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Rotation Around x-axis</h4>
+                <p>Find the volume of the solid formed by rotating the region bounded by \(y = x^2\) and \(y = 0\) from \(x = 0\) to \(x = 2\) around the x-axis.</p>
+                <div class="solution">
+                    <p>Using the disc method:</p>
+                    <p>\(V = \pi \int_{0}^{2} [x^2]^2 \, dx = \pi \int_{0}^{2} x^4 \, dx = \pi \left[ \frac{x^5}{5} \right]_{0}^{2}\)</p>
+                    <p>\(= \pi \cdot \frac{32}{5} = \frac{32\pi}{5}\)</p>
+                    <p>The volume of the solid is \(\frac{32\pi}{5}\) cubic units.</p>
+                </div>
+            </div>
+
+            <div class="theory-box">
+                <h4>Rotation Around Other Axes</h4>
+                <p>For rotation around the horizontal line \(y = k\):</p>
+                <p class="formula">
+                    \[ V = \pi \int_{a}^{b} [f(x) - k]^2 \, dx \]
+                </p>
+                <p>For rotation around the vertical line \(x = k\):</p>
+                <p class="formula">
+                    \[ V = 2\pi \int_{a}^{b} (x - k) \cdot f(x) \, dx \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Rotation Around y = 2</h4>
+                <p>Find the volume of the solid formed by rotating the region bounded by \(y = \sqrt{x}\), \(y = 0\), and \(x = 4\) around the line \(y = 2\).</p>
+                <div class="solution">
+                    <p>Using the formula for rotation around \(y = k\):</p>
+                    <p>\(V = \pi \int_{0}^{4} [(\sqrt{x} - 2)]^2 \, dx = \pi \int_{0}^{4} (x - 4\sqrt{x} + 4) \, dx\)</p>
+                    <p>\(= \pi \left[ \frac{x^2}{2} - 4 \cdot \frac{2x^{3/2}}{3} + 4x \right]_{0}^{4}\)</p>
+                    <p>\(= \pi \left[ 8 - \frac{8 \cdot 8}{3} + 16 - 0 \right]\)</p>
+                    <p>\(= \pi \left[ 24 - \frac{64}{3} \right] = \pi \left[ \frac{72 - 64}{3} \right] = \frac{8\pi}{3}\)</p>
+                    <p>The volume of the solid is \(\frac{8\pi}{3}\) cubic units.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="volumes-washer-method">
+            <h3>Volume with Washer Method</h3>
+            
+            <div class="theory-box">
+                <h4>Washer Method Formula</h4>
+                <p>For a solid of revolution formed by rotating the region between \(y = f(x)\) and \(y = g(x)\) from \(x = a\) to \(x = b\) around the x-axis, where \(f(x) \geq g(x) \geq 0\):</p>
+                <p class="formula">
+                    \[ V = \pi \int_{a}^{b} \left([f(x)]^2 - [g(x)]^2\right) \, dx \ ]
+                </p>
+                <p>For rotation around the y-axis:</p>
+                <p class="formula">
+                    \[ V = 2\pi \int_{a}^{b} x \cdot (f(x) - g(x)) \, dx \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Washer Method Around x-axis</h4>
+                <p>Find the volume of the solid formed by rotating the region bounded by \(y = x^2\) and \(y = x\) from \(x = 0\) to \(x = 1\) around the x-axis.</p>
+                <div class="solution">
+                    <p>In the interval \([0,1]\), \(x \geq x^2\), so \(f(x) = x\) and \(g(x) = x^2\).</p>
+                    <p>Using the washer method:</p>
+                    <p>\(V = \pi \int_{0}^{1} \left(x^2 - (x^2)^2\right) \, dx = \pi \int_{0}^{1} (x^2 - x^4) \, dx\)</p>
+                    <p>\(= \pi \left[ \frac{x^3}{3} - \frac{x^5}{5} \right]_{0}^{1} = \pi \left(\frac{1}{3} - \frac{1}{5} \right) = \pi \left(\frac{5 - 3}{15} \right) = \frac{2\pi}{15}\)</p>
+                    <p>The volume of the solid is \(\frac{2\pi}{15}\) cubic units.</p>
+                </div>
+            </div>
+
+            <div class="theory-box">
+                <h4>Washer Method for Rotation Around Other Axes</h4>
+                <p>For rotation around the horizontal line \(y = k\):</p>
+                <p class="formula">
+                    \[ V = \pi \int_{a}^{b} \left([f(x) - k]^2 - [g(x) - k]^2\right) \, dx \]
+                </p>
+                <p>For rotation around the vertical line \(x = k\):</p>
+                <p class="formula">
+                    \[ V = 2\pi \int_{a}^{b} (x - k) \cdot (f(x) - g(x)) \, dx \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Washer Method Around y-axis</h4>
+                <p>Find the volume of the solid formed by rotating the region bounded by \(y = x^2\) and \(y = x\) from \(x = 0\) to \(x = 1\) around the y-axis.</p>
+                <div class="solution">
+                    <p>Using the washer method for rotation around the y-axis:</p>
+                    <p>\(V = 2\pi \int_{0}^{1} x \cdot (x - x^2) \, dx = 2\pi \int_{0}^{1} (x^2 - x^3) \, dx\)</p>
+                    <p>\(= 2\pi \left[ \frac{x^3}{3} - \frac{x^4}{4} \right]_{0}^{1} = 2\pi \left(\frac{1}{3} - \frac{1}{4} \right) = 2\pi \left(\frac{4 - 3}{12} \right) = \frac{\pi}{6}\)</p>
+                    <p>The volume of the solid is \(\frac{\pi}{6}\) cubic units.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="arc-length">
+            <h3>Arc Length and Distance Traveled</h3>
+            
+            <div class="theory-box">
+                <h4>Arc Length Formula</h4>
+                <p>The arc length of a curve \(y = f(x)\) from \(x = a\) to \(x = b\), where \(f\) is differentiable on \([a,b]\), is:</p>
+                <p class="formula">
+                    \[ L = \int_{a}^{b} \sqrt{1 + [f'(x)]^2} \, dx \]
+                </p>
+                <p>For a curve \(x = g(y)\) from \(y = c\) to \(y = d\):</p>
+                <p class="formula">
+                    \[ L = \int_{c}^{d} \sqrt{1 + [g'(y)]^2} \, dy \]
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Arc Length</h4>
+                <p>Find the arc length of the curve \(y = \frac{x^{3/2}}{3} + \frac{1}{2x^{1/2}}\) from \(x = 1\) to \(x = 4\).</p>
+                <div class="solution">
+                    <p>\(f'(x) = \frac{3x^{1/2}}{6} - \frac{1}{4x^{3/2}} = \frac{1}{2}x^{1/2} - \frac{1}{4}x^{-3/2}\)</p>
+                    <p>\([f'(x)]^2 = \left(\frac{1}{2}x^{1/2} - \frac{1}{4}x^{-3/2}\right)^2\)</p>
+                    <p>This would be challenging to integrate directly, but by design, this function simplifies:</p>
+                    <p>\([f'(x)]^2 = \frac{1}{4}x + \frac{1}{16}x^{-3} - \frac{1}{4}x^{-1} = \frac{x^4 + 1 - 4x^2}{16x^3}\)</p>
+                    <p>With this particular function, \(1 + [f'(x)]^2 = \frac{16x^3 + x^4 + 1 - 4x^2}{16x^3} = \frac{(x^2 - 1)^2}{16x^3} + 1\)</p>
+                    <p>And by design: \(\sqrt{1 + [f'(x)]^2} = \frac{x^2 + 1}{2x^{3/2}}\)</p>
+                    <p>So the arc length is:</p>
+                    <p>\(L = \int_{1}^{4} \frac{x^2 + 1}{2x^{3/2}} \, dx = \frac{1}{2}\int_{1}^{4} \left(x^{1/2} + x^{-3/2}\right) \, dx\)</p>
+                    <p>\(= \frac{1}{2} \left[ \frac{2x^{3/2}}{3} - \frac{2}{x^{1/2}} \right]_{1}^{4}\)</p>
+                    <p>\(= \frac{1}{2} \left[ \left(\frac{2(4^{3/2})}{3} - \frac{2}{2}\right) - \left(\frac{2}{3} - 2\right) \right]\)</p>
+                    <p>\(= \frac{1}{2} \left[ \left(\frac{2 \cdot 8}{3} - 1\right) - \left(\frac{2}{3} - 2\right) \right]\)</p>
+                    <p>\(= \frac{1}{2} \left[ \left(\frac{16}{3} - 1\right) - \left(\frac{2 - 6}{3}\right) \ \right]\)</p>
+                    <p>\(= \frac{1}{2} \left[ \frac{16 - 3}{3} - \frac{-4}{3} \right] = \frac{1}{2} \left[ \frac{13 + 4}{3} \right] = \frac{17}{6}\)</p>
+                    <p>The arc length is \(\frac{17}{6}\) units.</p>
+                </div>
+            </div>
+
+            <div class="theory-box">
+                <h4>Distance Traveled vs. Displacement</h4>
+                <p>For a particle moving along a line with position function \(s(t)\) from \(t = a\) to \(t = b\):</p>
+                <ul>
+                    <li>Total distance traveled = \(\int_{a}^{b} |v(t)| \, dt\) where \(v(t) = s'(t)\)</li>
+                    <li>Displacement = \(s(b) - s(a) = \int_{a}^{b} v(t) \, dt\)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Distance Traveled</h4>
+                <p>A particle moves along a line with velocity \(v(t) = t^2 - 4t + 3\) m/s. Find the total distance traveled by the particle from \(t = 0\) to \(t = 5\).</p>
+                <div class="solution">
+                    <p>First, determine when \(v(t) = 0\):</p>
+                    <p>\(t^2 - 4t + 3 = 0\)</p>
+                    <p>\((t - 1)(t - 3) = 0\)</p>
+                    <p>\(t = 1\) or \(t = 3\)</p>
+                    <p>We need to find when \(v(t)\) changes sign:</p>
+                    <ul>
+                        <li>For \(0 \leq t < 1\): \(v(0) = 3 > 0\), so \(v(t) > 0\)</li>
+                        <li>For \(1 < t < 3\): \(v(2) = 4 - 8 + 3 = -1 < 0\), so \(v(t) < 0\)</li>
+                        <li>For \(3 < t \leq 5\): \(v(4) = 16 - 16 + 3 = 3 > 0\), so \(v(t) > 0\)</li>
+                    </ul>
+                    <p>Total distance traveled:</p>
+                    <p>\(D = \int_{0}^{1} v(t) \, dt + \int_{1}^{3} -v(t) \, dt + \int_{3}^{5} v(t) \, dt\)</p>
+                    <p>\(= \int_{0}^{1} (t^2 - 4t + 3) \, dt + \int_{1}^{3} -(t^2 - 4t + 3) \, dt + \int_{3}^{5} (t^2 - 4t + 3) \, dt\)</p>
+                    <p>\(= \left[ \frac{t^3}{3} - 2t^2 + 3t \right]_{0}^{1} + \left[ -\frac{t^3}{3} + 2t^2 - 3t \right]_{1}^{3} + \left[ \frac{t^3}{3} - 2t^2 + 3t \right]_{3}^{5}\)</p>
+                    <p>\(= \left(\frac{1}{3} - 2 + 3\right) + \left(-\frac{27}{3} + 18 - 9 + \frac{1}{3} - 2 + 3\right) + \left(\frac{125}{3} - 50 + 15 - \frac{27}{3} + 18 - 9\right)\)</p>
+                    <p>\(= \frac{4}{3} + \left(-9 + 10\right) + \left(\frac{125 - 27}{3} - 50 + 15 + 18 - 9\right)\)</p>
+                    <p>\(= \frac{4}{3} + 1 + \left(\frac{98}{3} - 26\right) = \frac{4}{3} + 1 + \left(\frac{98 - 78}{3}\right) = \frac{4}{3} + 1 + \frac{20}{3} = \frac{4 + 3 + 20}{3} = \frac{27}{3} = 9\)</p>
+                    <p>The total distance traveled is 9 meters.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">

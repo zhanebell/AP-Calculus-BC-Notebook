@@ -27,25 +27,301 @@
         <section class="objectives-section">
             <h3>Today's Objectives</h3>
             <ul class="objectives-list">
-                <li>Review Contextual Applications of Derivatives</li>
-                <li>Complete FRQ 2019 + FRQ 2018</li>
+                <li>Interpret derivatives in applied contexts</li>
+                <li>Analyze motion along a line</li>
+                <li>Apply derivatives in non-motion contexts</li>
+                <li>Solve related rates problems</li>
+                <li>Apply local linearity and linearization</li>
+                <li>Master L'Hôpital's Rule</li>
+                <li>Complete FRQ 2019</li>
             </ul>
         </section>
 
-        <section id="introduction">
-            <h3>Introduction</h3>
-            <p>Today we'll explore how derivatives can be applied to real-world problems and contextual situations.</p>
+        <section id="contextual-interpretation">
+            <h3>Interpreting the Meaning of the Derivative in Context</h3>
+            <div class="theory-box">
+                <h4>The Derivative as a Rate of Change</h4>
+                <p>The derivative \(f'(x)\) represents the instantaneous rate of change of \(f(x)\) with respect to \(x\).</p>
+                <p>In applied contexts, this has different interpretations:</p>
+                <ul>
+                    <li>Economics: Marginal cost, marginal revenue, marginal profit</li>
+                    <li>Physics: Velocity, acceleration, force</li>
+                    <li>Biology: Growth rates, decay rates</li>
+                    <li>Other: Any rate of change in one quantity with respect to another</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h4>Contextual Interpretation Example</h4>
+                <p>If \(P(t)\) represents the population of a city \(t\) years after 2010, then:</p>
+                <ul>
+                    <li>\(P(5) = 250,000\): The population in 2015 was 250,000 people</li>
+                    <li>\(P'(5) = 15,000\): The population was growing at a rate of 15,000 people per year in 2015</li>
+                    <li>\(P''(5) = -500\): The growth rate was decreasing by 500 people per year per year in 2015</li>
+                </ul>
+            </div>
+            
+            <div class="chart-box">
+                <h4>Units of Derivatives in Context</h4>
+                <table class="derivative-units">
+                    <tr>
+                        <th>Function</th>
+                        <th>Units</th>
+                        <th>First Derivative</th>
+                        <th>Second Derivative</th>
+                    </tr>
+                    <tr>
+                        <td>Position \(s(t)\)</td>
+                        <td>meters</td>
+                        <td>meters/second (velocity)</td>
+                        <td>meters/second² (acceleration)</td>
+                    </tr>
+                    <tr>
+                        <td>Cost \(C(q)\)</td>
+                        <td>dollars</td>
+                        <td>dollars/unit (marginal cost)</td>
+                        <td>dollars/unit² (rate of change of marginal cost)</td>
+                    </tr>
+                    <tr>
+                        <td>Volume \(V(r)\)</td>
+                        <td>cm³</td>
+                        <td>cm³/cm (rate of change with radius)</td>
+                        <td>cm³/cm² (second-order rate of change)</td>
+                    </tr>
+                </table>
+            </div>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="straight-line-motion">
+            <h3>Straight-Line Motion: Connecting Position, Velocity, and Acceleration</h3>
+            <div class="formula-box">
+                <h4>Key Relationships</h4>
+                <ul>
+                    <li>Position function: \(s(t)\) (measured in distance units)</li>
+                    <li>Velocity function: \(v(t) = s'(t)\) (distance/time units)</li>
+                    <li>Acceleration function: \(a(t) = v'(t) = s''(t)\) (distance/time² units)</li>
+                </ul>
+            </div>
+            
+            <div class="concept-box">
+                <h4>Motion Concepts</h4>
+                <ul>
+                    <li>An object is moving forward (in the positive direction) when \(v(t) > 0\)</li>
+                    <li>An object is moving backward (in the negative direction) when \(v(t) < 0\)</li>
+                    <li>An object is at rest when \(v(t) = 0\)</li>
+                    <li>An object is speeding up when \(v(t)\) and \(a(t)\) have the same sign</li>
+                    <li>An object is slowing down when \(v(t)\) and \(a(t)\) have opposite signs</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h4>Motion Analysis Example</h4>
+                <p>A particle moves along a straight line with position function \(s(t) = t^3 - 6t^2 + 9t + 2\) for \(t \geq 0\), where \(s\) is measured in meters and \(t\) in seconds.</p>
+                <p>Velocity: \(v(t) = s'(t) = 3t^2 - 12t + 9\)</p>
+                <p>Acceleration: \(a(t) = v'(t) = 6t - 12\)</p>
+                <p>To find when the particle is at rest: Solve \(v(t) = 0\)</p>
+                <p>\(3t^2 - 12t + 9 = 0\)</p>
+                <p>\(t = 1\) or \(t = 3\)</p>
+                <p>To find when the particle changes direction: At \(t = 1\) and \(t = 3\)</p>
+                <p>To find when the particle is speeding up: When \(v(t)\) and \(a(t)\) have the same sign</p>
+                <p>For \(t < 2\): \(a(t) < 0\); For \(t > 2\): \(a(t) > 0\)</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>Total Distance vs. Displacement</h4>
+                <p><strong>Displacement</strong> from \(t = a\) to \(t = b\): \(s(b) - s(a)\)</p>
+                <p><strong>Total distance traveled</strong> from \(t = a\) to \(t = b\): \(\int_a^b |v(t)| \, dt\)</p>
+            </div>
+        </section>
+
+        <section id="rates-of-change">
+            <h3>Rates of Change in Applied Contexts Other Than Motion</h3>
+            <div class="application-box">
+                <h4>Common Applications</h4>
+                <table>
+                    <tr>
+                        <th>Context</th>
+                        <th>Function</th>
+                        <th>Derivative Interpretation</th>
+                    </tr>
+                    <tr>
+                        <td>Economics</td>
+                        <td>\(C(x)\): Cost function</td>
+                        <td>\(C'(x)\): Marginal cost (cost of producing one more unit)</td>
+                    </tr>
+                    <tr>
+                        <td>Economics</td>
+                        <td>\(R(x)\): Revenue function</td>
+                        <td>\(R'(x)\): Marginal revenue</td>
+                    </tr>
+                    <tr>
+                        <td>Economics</td>
+                        <td>\(P(x) = R(x) - C(x)\): Profit function</td>
+                        <td>\(P'(x)\): Marginal profit</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>\(N(t)\): Population at time \(t\)</td>
+                        <td>\(N'(t)\): Population growth rate</td>
+                    </tr>
+                    <tr>
+                        <td>Chemistry</td>
+                        <td>\(A(t)\): Amount of substance at time \(t\)</td>
+                        <td>\(A'(t)\): Reaction rate</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="example-box">
+                <h4>Economic Example</h4>
+                <p>A company's cost function for producing \(x\) items is \(C(x) = 500 + 10x - 0.01x^2 + 0.0001x^3\) dollars.</p>
+                <p>The marginal cost function is \(C'(x) = 10 - 0.02x + 0.0003x^2\) dollars per item.</p>
+                <p>At \(x = 100\) units: \(C'(100) = 10 - 0.02(100) + 0.0003(100)^2 = 10 - 2 + 3 = 11\)</p>
+                <p>Interpretation: When producing 100 units, the cost of producing the 101st unit is approximately $11.</p>
+            </div>
+        </section>
+
+        <section id="related-rates">
+            <h3>Introduction to Related Rates</h3>
+            <div class="theory-box">
+                <h4>Related Rates Concept</h4>
+                <p>Related rates problems involve finding the rate at which one quantity changes by relating it to the rate at which another quantity changes, using relationships between the quantities and the chain rule.</p>
+            </div>
+            
+            <div class="strategy-box">
+                <h4>Related Rates Problem-Solving Strategy</h4>
+                <ol>
+                    <li><strong>Read</strong> the problem carefully and identify what rates are known and what rate is to be found.</li>
+                    <li><strong>Draw</strong> a diagram if applicable and label variables.</li>
+                    <li><strong>Identify</strong> the equation that relates the variables.</li>
+                    <li><strong>Differentiate</strong> implicitly with respect to time.</li>
+                    <li><strong>Substitute</strong> the known values and solve for the unknown rate.</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <h4>Related Rates Example</h4>
+                <p>Water is flowing into a conical tank at a rate of 5 cubic meters per minute. The tank has height 12 meters and radius 4 meters at the top. How fast is the water level rising when the water is 3 meters deep?</p>
+                <p><strong>Step 1:</strong> Let \(r\) = radius of water surface, \(h\) = height of water, \(V\) = volume of water.</p>
+                <p>We know: \(\frac{dV}{dt} = 5 \text{ m}^3\text{/min}\), and need to find \(\frac{dh}{dt}\) when \(h = 3\).</p>
+                <p><strong>Step 2:</strong> From similar triangles: \(\frac{r}{h} = \frac{4}{12} = \frac{1}{3}\), so \(r = \frac{h}{3}\)</p>
+                <p><strong>Step 3:</strong> The volume of a cone is \(V = \frac{1}{3}\pi r^2 h\)</p>
+                <p>Substituting our expression for \(r\): \(V = \frac{1}{3}\pi \left(\frac{h}{3}\right)^2 h = \frac{\pi h^3}{27}\)</p>
+                <p><strong>Step 4:</strong> Differentiate with respect to time: \(\frac{dV}{dt} = \frac{\pi}{27} \cdot 3h^2 \cdot \frac{dh}{dt} = \frac{\pi h^2}{9} \cdot \frac{dh}{dt}\)</p>
+                <p><strong>Step 5:</strong> Solve for \(\frac{dh}{dt}\) when \(h = 3\) and \(\frac{dV}{dt} = 5\):</p>
+                <p>\(5 = \frac{\pi \cdot 3^2}{9} \cdot \frac{dh}{dt} = \frac{\pi \cdot 9}{9} \cdot \frac{dh}{dt} = \pi \cdot \frac{dh}{dt}\)</p>
+                <p>\(\frac{dh}{dt} = \frac{5}{\pi} \approx 1.59\) meters per minute</p>
+            </div>
+        </section>
+
+        <section id="solving-related-rates">
+            <h3>Solving Related Rates Problems</h3>
+            <div class="example-box">
+                <h4>Ladder Sliding Example</h4>
+                <p>A ladder 10 meters long is leaning against a vertical wall. If the bottom of the ladder is sliding away from the wall at a rate of 0.5 meters per second, how fast is the top of the ladder sliding down the wall when the bottom is 6 meters from the wall?</p>
+                <p><strong>Step 1:</strong> Let \(x\) = distance from wall to bottom of ladder, \(y\) = height of top of ladder.</p>
+                <p>Known: \(\frac{dx}{dt} = 0.5\) m/s, need to find \(\frac{dy}{dt}\) when \(x = 6\).</p>
+                <p><strong>Step 2:</strong> By the Pythagorean theorem: \(x^2 + y^2 = 10^2 = 100\)</p>
+                <p><strong>Step 3:</strong> Differentiate with respect to time: \(2x \cdot \frac{dx}{dt} + 2y \cdot \frac{dy}{dt} = 0\)</p>
+                <p><strong>Step 4:</strong> Solve for \(\frac{dy}{dt}\):</p>
+                <p>\(\frac{dy}{dt} = -\frac{x}{y} \cdot \frac{dx}{dt}\)</p>
+                <p><strong>Step 5:</strong> When \(x = 6\), calculate \(y\): \(y^2 = 100 - x^2 = 100 - 36 = 64\), so \(y = 8\)</p>
+                <p>\(\frac{dy}{dt} = -\frac{6}{8} \cdot 0.5 = -\frac{3}{8} = -0.375\) meters per second</p>
+                <p>The negative sign indicates that the top of the ladder is moving downward.</p>
+            </div>
+            
+            <div class="common-mistakes-box">
+                <h4>Common Mistakes in Related Rates</h4>
+                <ul>
+                    <li>Forgetting to apply the chain rule when differentiating</li>
+                    <li>Using variable values at different times in the same equation</li>
+                    <li>Not identifying all constraints or relationships between variables</li>
+                    <li>Errors in setting up the geometric relationships</li>
+                    <li>Sign errors when interpreting the direction of change</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="local-linearity">
+            <h3>Local Linearity and Linearization</h3>
+            <div class="definition-box">
+                <h4>Local Linearity</h4>
+                <p>A differentiable function \(f\) is locally linear at \(x = a\) because its graph increasingly resembles its tangent line as we zoom in at the point \((a, f(a))\).</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Linearization Formula</h4>
+                <p>The linearization (linear approximation) of a function \(f\) at \(x = a\) is:</p>
+                <p class="formula">L(x) = f(a) + f'(a)(x - a)</p>
+                <p>This is the equation of the tangent line to \(f\) at \(x = a\).</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Linearization Example</h4>
+                <p>Find the linearization of \(f(x) = \sqrt{x}\) at \(x = 4\) and use it to approximate \(\sqrt{4.1}\).</p>
+                <p>\(f(4) = \sqrt{4} = 2\)</p>
+                <p>\(f'(x) = \frac{1}{2\sqrt{x}}\), so \(f'(4) = \frac{1}{2\sqrt{4}} = \frac{1}{4}\)</p>
+                <p>Linearization: \(L(x) = 2 + \frac{1}{4}(x - 4) = 2 + \frac{x-4}{4}\)</p>
+                <p>Approximation: \(\sqrt{4.1} \approx L(4.1) = 2 + \frac{4.1-4}{4} = 2 + \frac{0.1}{4} = 2 + 0.025 = 2.025\)</p>
+                <p>The actual value is \(\sqrt{4.1} \approx 2.02485\), so our approximation is very close.</p>
+            </div>
+            
+            <div class="application-box">
+                <h4>Error in Linearization</h4>
+                <p>The error in a linear approximation can be estimated using:</p>
+                <p>\(|f(x) - L(x)| \leq \frac{M}{2}|x-a|^2\)</p>
+                <p>where \(M\) is the maximum value of \(|f''(t)|\) on the interval between \(a\) and \(x\).</p>
+            </div>
+        </section>
+
+        <section id="lhospitals-rule">
+            <h3>Using L'Hôpital's Rule for Determining Limits of Indeterminate Forms</h3>
+            <div class="theory-box">
+                <h4>Indeterminate Forms</h4>
+                <p>Common indeterminate forms include:</p>
+                <ul>
+                    <li>\(\frac{0}{0}\) - both numerator and denominator approach 0</li>
+                    <li>\(\frac{\infty}{\infty}\) - both numerator and denominator approach infinity</li>
+                    <li>\(0 \cdot \infty\), \(\infty - \infty\), \(1^\infty\), \(0^0\), \(\infty^0\) - can often be rewritten</li>
+                </ul>
+            </div>
+            
+            <div class="formula-box">
+                <h4>L'Hôpital's Rule</h4>
+                <p>If \(\lim_{x \to a} \frac{f(x)}{g(x)}\) results in the indeterminate form \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\), then:</p>
+                <p class="formula">\(\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\)</p>
+                <p>provided that the limit on the right exists or is infinite.</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>L'Hôpital's Rule Examples</h4>
+                <p><strong>Example 1:</strong> Find \(\lim_{x \to 0} \frac{\sin x}{x}\)</p>
+                <p>This is a \(\frac{0}{0}\) form, so we apply L'Hôpital's Rule:</p>
+                <p>\(\lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = \cos 0 = 1\)</p>
+                
+                <p><strong>Example 2:</strong> Find \(\lim_{x \to \infty} \frac{3x^2+2x+1}{5x^2-7}\)</p>
+                <p>This is a \(\frac{\infty}{\infty}\) form, so we apply L'Hôpital's Rule:</p>
+                <p>\(\lim_{x \to \infty} \frac{3x^2+2x+1}{5x^2-7} = \lim_{x \to \infty} \frac{6x+2}{10x} = \lim_{x \to \infty} \frac{6+\frac{2}{x}}{10} = \frac{6}{10} = \frac{3}{5}\)</p>
+                
+                <p><strong>Example 3:</strong> Find \(\lim_{x \to 0} x \ln x\) (a \(0 \cdot \infty\) form)</p>
+                <p>Rewrite as \(\lim_{x \to 0} \frac{\ln x}{1/x}\) to get a \(\frac{-\infty}{\infty}\) form, then apply L'Hôpital's Rule:</p>
+                <p>\(\lim_{x \to 0} \frac{\ln x}{1/x} = \lim_{x \to 0} \frac{1/x}{-1/x^2} = \lim_{x \to 0} -x = 0\)</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>Applying L'Hôpital's Rule Multiple Times</h4>
+                <p>If the first application of L'Hôpital's Rule still results in an indeterminate form, you can apply it repeatedly until a determinate form is reached.</p>
+                <p><strong>Example:</strong> \(\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}\)</p>
+                <p>First application: \(\lim_{x \to 0} \frac{e^x - 1}{2x}\) (still \(\frac{0}{0}\))</p>
+                <p>Second application: \(\lim_{x \to 0} \frac{e^x}{2} = \frac{1}{2}\)</p>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">
                 <a href="https://apcentral.collegeboard.org/media/pdf/ap19-frq-calculus-bc.pdf" target="_blank" class="frq-button">2019 FRQ</a>
                 <a href="https://apcentral.collegeboard.org/media/pdf/ap19-sg-calculus-bc.pdf" target="_blank" class="frq-button">2019 Scoring Guidelines</a>
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap18-frq-calculus-bc.pdf" target="_blank" class="frq-button">2018 FRQ</a>
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap18-sg-calculus-bc.pdf" target="_blank" class="frq-button">2018 Scoring Guidelines</a>
             </div>
         </section>
     </main>

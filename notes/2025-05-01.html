@@ -27,18 +27,186 @@
         <section class="objectives-section">
             <h3>Today's Objectives</h3>
             <ul class="objectives-list">
-                <li>Review Differentiation (continued)</li>
+                <li>Review Advanced Differentiation Techniques</li>
+                <li>Master the Chain Rule</li>
+                <li>Apply Implicit Differentiation</li>
+                <li>Differentiate Inverse Functions</li>
+                <li>Calculate Higher-Order Derivatives</li>
                 <li>Complete FRQ 2020</li>
             </ul>
         </section>
 
-        <section id="introduction">
-            <h3>Introduction</h3>
-            <p>Today we'll explore more advanced differentiation techniques, focusing on composite, implicit, and inverse functions.</p>
+        <section id="chain-rule">
+            <h3>The Chain Rule</h3>
+            <div class="theory-box">
+                <h4>Chain Rule Concept</h4>
+                <p>The chain rule is used to differentiate composite functions \(f(g(x))\).</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Chain Rule Formula</h4>
+                <p>If \(y = f(u)\) and \(u = g(x)\), then:</p>
+                <p class="formula">\(\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}\)</p>
+                <p>Or using function notation:</p>
+                <p class="formula">\((f \circ g)'(x) = f'(g(x)) \cdot g'(x)\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Chain Rule Example</h4>
+                <p>Find the derivative of \(y = \sin(x^2)\).</p>
+                <p>Let \(u = x^2\) and \(y = \sin(u)\).</p>
+                <p>\(\frac{dy}{du} = \cos(u)\) and \(\frac{du}{dx} = 2x\)</p>
+                <p>\(\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \cos(u) \cdot 2x = \cos(x^2) \cdot 2x = 2x\cos(x^2)\)</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>Common Patterns Using Chain Rule</h4>
+                <ul>
+                    <li>\(\frac{d}{dx}[\sin(g(x))] = \cos(g(x)) \cdot g'(x)\)</li>
+                    <li>\(\frac{d}{dx}[e^{g(x)}] = e^{g(x)} \cdot g'(x)\)</li>
+                    <li>\(\frac{d}{dx}[\ln(g(x))] = \frac{g'(x)}{g(x)}\) where \(g(x) > 0\)</li>
+                    <li>\(\frac{d}{dx}[g(x)^n] = n \cdot g(x)^{n-1} \cdot g'(x)\)</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="implicit-differentiation">
+            <h3>Implicit Differentiation</h3>
+            <div class="theory-box">
+                <h4>Concept of Implicit Differentiation</h4>
+                <p>Implicit differentiation allows us to find derivatives when the relationship between variables is defined implicitly rather than explicitly as \(y = f(x)\).</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>Process of Implicit Differentiation</h4>
+                <ol>
+                    <li>Differentiate both sides of the equation with respect to \(x\).</li>
+                    <li>When differentiating terms with \(y\), use the chain rule by multiplying by \(\frac{dy}{dx}\).</li>
+                    <li>Solve for \(\frac{dy}{dx}\).</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <h4>Implicit Differentiation Example</h4>
+                <p>Find \(\frac{dy}{dx}\) for \(x^2 + y^2 = 25\).</p>
+                <p>Differentiating both sides with respect to \(x\):</p>
+                <p>\(2x + 2y\frac{dy}{dx} = 0\)</p>
+                <p>Solving for \(\frac{dy}{dx}\):</p>
+                <p>\(2y\frac{dy}{dx} = -2x\)</p>
+                <p>\(\frac{dy}{dx} = -\frac{x}{y}\)</p>
+            </div>
+            
+            <div class="application-box">
+                <h4>Applications of Implicit Differentiation</h4>
+                <ul>
+                    <li>Finding derivatives for relations that cannot be easily expressed as \(y = f(x)\).</li>
+                    <li>Working with equations of conics (circles, ellipses, etc.).</li>
+                    <li>Finding derivatives of inverse functions.</li>
+                    <li>Related rates problems.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="inverse-functions">
+            <h3>Differentiation of Inverse Functions</h3>
+            <div class="formula-box">
+                <h4>Derivative of an Inverse Function</h4>
+                <p>If \(f\) is a differentiable function with an inverse function \(f^{-1}\), and \(f'(f^{-1}(x)) \neq 0\), then:</p>
+                <p class="formula">\((f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example of Differentiating an Inverse Function</h4>
+                <p>Find the derivative of \(f^{-1}(x)\) at \(x = 8\) if \(f(x) = x^3 + 2\) and \(f^{-1}(8) = 2\).</p>
+                <p>We know that \(f'(x) = 3x^2\)</p>
+                <p>\((f^{-1})'(8) = \frac{1}{f'(f^{-1}(8))} = \frac{1}{f'(2)} = \frac{1}{3(2)^2} = \frac{1}{12}\)</p>
+            </div>
+        </section>
+
+        <section id="inverse-trig">
+            <h3>Derivatives of Inverse Trigonometric Functions</h3>
+            <div class="formula-box">
+                <h4>Common Inverse Trigonometric Derivatives</h4>
+                <ul>
+                    <li>\(\frac{d}{dx}[\arcsin(x)] = \frac{1}{\sqrt{1-x^2}}\) for \(|x| < 1\)</li>
+                    <li>\(\frac{d}{dx}[\arccos(x)] = -\frac{1}{\sqrt{1-x^2}}\) for \(|x| < 1\)</li>
+                    <li>\(\frac{d}{dx}[\arctan(x)] = \frac{1}{1+x^2}\) for all real \(x\)</li>
+                    <li>\(\frac{d}{dx}[\text{arccot}(x)] = -\frac{1}{1+x^2}\) for all real \(x\)</li>
+                    <li>\(\frac{d}{dx}[\text{arcsec}(x)] = \frac{1}{|x|\sqrt{x^2-1}}\) for \(|x| > 1\)</li>
+                    <li>\(\frac{d}{dx}[\text{arccsc}(x)] = -\frac{1}{|x|\sqrt{x^2-1}}\) for \(|x| > 1\)</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example with Inverse Trigonometric Functions</h4>
+                <p>Find the derivative of \(y = x^2\arctan(x) - \ln\sqrt{1+x^2}\).</p>
+                <p>Using product rule for the first term:</p>
+                <p>\(\frac{d}{dx}[x^2\arctan(x)] = 2x\arctan(x) + x^2 \cdot \frac{1}{1+x^2}\)</p>
+                <p>For the second term:</p>
+                <p>\(\frac{d}{dx}[\ln\sqrt{1+x^2}] = \frac{d}{dx}[\frac{1}{2}\ln(1+x^2)] = \frac{1}{2} \cdot \frac{2x}{1+x^2} = \frac{x}{1+x^2}\)</p>
+                <p>Therefore:</p>
+                <p>\(\frac{dy}{dx} = 2x\arctan(x) + \frac{x^2}{1+x^2} - \frac{x}{1+x^2}\)</p>
+                <p>\(\frac{dy}{dx} = 2x\arctan(x) + \frac{x^2 - x}{1+x^2}\)</p>
+            </div>
+        </section>
+
+        <section id="selecting-procedures">
+            <h3>Selecting Procedures for Calculating Derivatives</h3>
+            <div class="strategy-box">
+                <h4>Decision Flow for Derivative Techniques</h4>
+                <ul>
+                    <li>Is it a basic function? → Use basic derivative rules</li>
+                    <li>Is it a sum/difference of functions? → Use sum/difference rules</li>
+                    <li>Is it a product of functions? → Use product rule</li>
+                    <li>Is it a quotient of functions? → Use quotient rule</li>
+                    <li>Is it a composition of functions? → Use chain rule</li>
+                    <li>Is it an equation with \(x\) and \(y\) mixed? → Use implicit differentiation</li>
+                    <li>Is it an inverse function? → Use inverse function derivative formula</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h4>Technique Selection Example</h4>
+                <p>Find the derivative of \(y = \frac{e^x \sin(x^2)}{x^3 + 1}\)</p>
+                <p>This is a quotient, so we use the quotient rule:</p>
+                <p>\(\frac{dy}{dx} = \frac{(e^x \sin(x^2))' \cdot (x^3 + 1) - (e^x \sin(x^2)) \cdot (x^3 + 1)'}{(x^3 + 1)^2}\)</p>
+                <p>For \((e^x \sin(x^2))'\), we use the product rule:</p>
+                <p>\((e^x \sin(x^2))' = e^x \sin(x^2) + e^x \cdot (2x\cos(x^2))\)</p>
+                <p>For \((x^3 + 1)'\), we get \(3x^2\)</p>
+                <p>The full derivative calculation follows by substituting these parts into the quotient rule.</p>
+            </div>
+        </section>
+
+        <section id="higher-order">
+            <h3>Higher-Order Derivatives</h3>
+            <div class="definition-box">
+                <h4>Definition of Higher-Order Derivatives</h4>
+                <p>The second derivative is the derivative of the first derivative: \(f''(x) = \frac{d}{dx}[f'(x)]\)</p>
+                <p>Similarly, the third derivative is: \(f'''(x) = \frac{d}{dx}[f''(x)]\)</p>
+                <p>In general, the \(n^{th}\) derivative is denoted as \(f^{(n)}(x)\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Calculating Higher-Order Derivatives</h4>
+                <p>Find \(f''(x)\) for \(f(x) = 3x^4 - 2x^3 + 5x - 1\)</p>
+                <p>\(f'(x) = 12x^3 - 6x^2 + 5\)</p>
+                <p>\(f''(x) = 36x^2 - 12x\)</p>
+                <p>\(f'''(x) = 72x - 12\)</p>
+                <p>\(f^{(4)}(x) = 72\)</p>
+                <p>\(f^{(5)}(x) = 0\)</p>
+            </div>
+            
+            <div class="application-box">
+                <h4>Applications of Higher-Order Derivatives</h4>
+                <ul>
+                    <li>Analyzing concavity and inflection points</li>
+                    <li>Taylor series and polynomial approximations</li>
+                    <li>Motion analysis (position, velocity, acceleration, jerk)</li>
+                    <li>Differential equations</li>
+                </ul>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">

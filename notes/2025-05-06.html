@@ -27,25 +27,218 @@
         <section class="objectives-section">
             <h3>Today's Objectives</h3>
             <ul class="objectives-list">
-                <li>Review Differential Equations</li>
-                <li>Complete FRQ 2014 + FRQ 2013</li>
+                <li>Master solving differential equations with separation of variables</li>
+                <li>Analyze and interpret slope fields</li>
+                <li>Solve logistic differential equations</li>
+                <li>Practice Euler's method</li>
+                <li>Complete BC-specific differential equation FRQs</li>
             </ul>
         </section>
 
         <section id="introduction">
-            <h3>Introduction</h3>
-            <p>Today we'll study differential equations, examining how to solve and apply them to model real-world phenomena.</p>
+            <h3>Introduction to Differential Equations</h3>
+            <div class="theory-box">
+                <h4>What is a Differential Equation?</h4>
+                <p>A differential equation is an equation containing derivatives of a function. They are used to describe rates of change in physical, biological, and economic systems.</p>
+                <p>On the AP Calculus BC exam, you'll primarily work with first-order differential equations (containing only first derivatives) and simple second-order differential equations.</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Common Forms</h4>
+                <ul>
+                    <li>First-order: \(\frac{dy}{dx} = f(x,y)\)</li>
+                    <li>Separable: \(\frac{dy}{dx} = g(x) \cdot h(y)\)</li>
+                    <li>Autonomous: \(\frac{dy}{dx} = f(y)\) (depends only on y)</li>
+                    <li>Linear: \(\frac{dy}{dx} + P(x)y = Q(x)\)</li>
+                    <li>Logistic: \(\frac{dy}{dt} = ky(L-y)\) where L is the carrying capacity</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Content will be added based on future instructions -->
-        
+        <section id="separation-of-variables">
+            <h3>Separation of Variables</h3>
+            <div class="theory-box">
+                <h4>Method</h4>
+                <p>For equations of the form \(\frac{dy}{dx} = g(x) \cdot h(y)\):</p>
+                <ol>
+                    <li>Rearrange to separate variables: \(\frac{1}{h(y)} \cdot \frac{dy}{dx} = g(x)\)</li>
+                    <li>Multiply both sides by dx: \(\frac{1}{h(y)} \, dy = g(x) \, dx\)</li>
+                    <li>Integrate both sides: \(\int \frac{1}{h(y)} \, dy = \int g(x) \, dx\)</li>
+                    <li>Solve for y as a function of x</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: \(\frac{dy}{dx} = xy^2\)</h4>
+                <p>Step 1: Separate variables: \(\frac{1}{y^2} \, dy = x \, dx\)</p>
+                <p>Step 2: Integrate both sides: \(\int \frac{1}{y^2} \, dy = \int x \, dx\)</p>
+                <p>Step 3: Solve: \(-\frac{1}{y} = \frac{x^2}{2} + C\)</p>
+                <p>Step 4: Solve for y: \(y = -\frac{1}{\frac{x^2}{2} + C} = -\frac{2}{x^2 + 2C}\)</p>
+                <p>The general solution is \(y = -\frac{2}{x^2 + 2C}\) or \(y = -\frac{2}{x^2 + K}\) where K is an arbitrary constant.</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Particular Solutions</h4>
+                <p>To find a particular solution, use an initial condition (x₀, y₀) to determine the value of the constant C:</p>
+                <ol>
+                    <li>Substitute the initial condition into the general solution</li>
+                    <li>Solve for the constant C</li>
+                    <li>Substitute C back into the general solution</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="slope-fields">
+            <h3>Slope Fields and Direction Fields</h3>
+            <div class="theory-box">
+                <h4>What is a Slope Field?</h4>
+                <p>A slope field (or direction field) is a graphical representation of a first-order differential equation \(\frac{dy}{dx} = f(x,y)\).</p>
+                <p>At each point (x,y) in the plane, we draw a small line segment with slope f(x,y).</p>
+                <p>The resulting pattern of slopes shows how solutions to the differential equation behave.</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Interpreting Slope Fields</h4>
+                <ol>
+                    <li>Solution curves are paths that follow the direction of the slope field at every point</li>
+                    <li>If all slopes in a horizontal line are the same, the DE is autonomous \(\frac{dy}{dx} = f(y)\)</li>
+                    <li>Horizontal line segments indicate where \(\frac{dy}{dx} = 0\) (critical points)</li>
+                    <li>Vertical patterns indicate potential asymptotes or boundaries</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: Analyzing the Slope Field for \(\frac{dy}{dx} = x - y\)</h4>
+                <p>For this differential equation:</p>
+                <ul>
+                    <li>When y = x, the slope is 0 (horizontal line segments along the line y = x)</li>
+                    <li>Above the line y = x, slopes are negative</li>
+                    <li>Below the line y = x, slopes are positive</li>
+                    <li>Solution curves tend to approach the line y = x as x increases</li>
+                </ul>
+                <div class="note">You should be able to sketch segments at key points in a slope field and identify which solution curve passes through a given point.</div>
+            </div>
+        </section>
+
+        <section id="logistic-differential-equations">
+            <h3>Logistic Differential Equations</h3>
+            <div class="formula-box">
+                <h4>Logistic Growth Model</h4>
+                <p>The logistic differential equation is given by:</p>
+                <p class="formula">\(\frac{dy}{dt} = ky(L-y)\) or \(\frac{dy}{dt} = ky(1-\frac{y}{L})\)</p>
+                <p>Where:</p>
+                <ul>
+                    <li>\(k\) is the growth rate constant</li>
+                    <li>\(L\) is the carrying capacity (maximum sustainable population)</li>
+                    <li>\(y\) is the population at time \(t\)</li>
+                </ul>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Solution to the Logistic Equation</h4>
+                <p>The solution to the logistic differential equation is:</p>
+                <p class="formula">\(y(t) = \frac{L}{1 + Ae^{-kt}}\)</p>
+                <p>Where \(A\) is determined by the initial condition \(y(0) = y_0\):</p>
+                <p class="formula">\(A = \frac{L - y_0}{y_0}\)</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: Logistic Growth</h4>
+                <p>A population follows the logistic model \(\frac{dP}{dt} = 0.5P(1-\frac{P}{1000})\) with \(P(0) = 100\).</p>
+                <p>Step 1: Identify k = 0.5 and L = 1000</p>
+                <p>Step 2: Calculate A = \(\frac{L-y_0}{y_0} = \frac{1000-100}{100} = 9\)</p>
+                <p>Step 3: Write the solution: \(P(t) = \frac{1000}{1 + 9e^{-0.5t}}\)</p>
+                <p>Step 4: Analyze the solution:
+                    <ul>
+                        <li>As t → ∞, P(t) → 1000 (carrying capacity)</li>
+                        <li>The population grows most rapidly at the inflection point when P = 500</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <section id="eulers-method">
+            <h3>Euler's Method</h3>
+            <div class="theory-box">
+                <h4>Numerical Approximation</h4>
+                <p>Euler's method is a numerical technique for approximating solutions to differential equations when analytical solutions are difficult or impossible to find.</p>
+                <p>For a differential equation \(\frac{dy}{dx} = f(x,y)\) with initial condition \(y(x_0) = y_0\):</p>
+            </div>
+            
+            <div class="formula-box">
+                <h4>Euler's Method Formula</h4>
+                <p class="formula">\(y_{n+1} = y_n + h \cdot f(x_n, y_n)\)</p>
+                <p>Where:</p>
+                <ul>
+                    <li>\(h\) is the step size (Δx)</li>
+                    <li>\(x_{n+1} = x_n + h\)</li>
+                    <li>\(f(x_n, y_n)\) is the derivative evaluated at the current point</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h4>Example: Applying Euler's Method</h4>
+                <p>Use Euler's method with step size h = 0.2 to approximate y(0.6) for the differential equation \(\frac{dy}{dx} = x + y\) with initial condition y(0) = 1.</p>
+                <table>
+                    <tr>
+                        <th>n</th>
+                        <th>xₙ</th>
+                        <th>yₙ</th>
+                        <th>f(xₙ,yₙ) = xₙ + yₙ</th>
+                        <th>yₙ₊₁ = yₙ + h·f(xₙ,yₙ)</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0 + 1 = 1</td>
+                        <td>1 + 0.2(1) = 1.2</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0.2</td>
+                        <td>1.2</td>
+                        <td>0.2 + 1.2 = 1.4</td>
+                        <td>1.2 + 0.2(1.4) = 1.48</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.4</td>
+                        <td>1.48</td>
+                        <td>0.4 + 1.48 = 1.88</td>
+                        <td>1.48 + 0.2(1.88) = 1.856</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.6</td>
+                        <td>1.856</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <p>Therefore, y(0.6) ≈ 1.856 using Euler's method with h = 0.2.</p>
+            </div>
+            
+            <div class="theory-box">
+                <h4>Error in Euler's Method</h4>
+                <p>Euler's method has a local error of O(h²) and a global error of O(h).</p>
+                <p>To improve accuracy:
+                    <ul>
+                        <li>Decrease the step size h</li>
+                        <li>Use improved methods like the midpoint method or Runge-Kutta methods</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
         <section class="frq-buttons">
             <h3>Today's Assignments</h3>
             <div class="button-container">
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap14-frq-calculus-bc.pdf" target="_blank" class="frq-button">2014 FRQ</a>
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap14-sg-calculus-bc.pdf" target="_blank" class="frq-button">2014 Scoring Guidelines</a>
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap13-frq-calculus-bc.pdf" target="_blank" class="frq-button">2013 FRQ</a>
-                <a href="https://apcentral.collegeboard.org/media/pdf/ap13-sg-calculus-bc.pdf" target="_blank" class="frq-button">2013 Scoring Guidelines</a>
+                <a href="https://apcentral.collegeboard.org/media/pdf/ap18-frq-calculus-bc.pdf" target="_blank" class="frq-button">2018 FRQ</a>
+                <a href="https://apcentral.collegeboard.org/media/pdf/ap18-sg-calculus-bc.pdf" target="_blank" class="frq-button">2018 Scoring Guidelines</a>
+            </div>
+            <div class="practice-note">
+                <p>Focus on Question 5 from the 2018 FRQ, which tests concepts of differential equations, including Euler's method and slope fields.</p>
             </div>
         </section>
     </main>
